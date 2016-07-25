@@ -45,38 +45,38 @@ class MainHandler(webapp2.RequestHandler):
 class InboxHandler(webapp2.RequestHandler):
     def get(self):
 
-    template = jinja_environment.get_template("inbox.html")
-#   template_vals = {'messages':messages, 'email':email, 'logout_url':logout_url}
+        template = jinja_environment.get_template("inbox.html")
+#       template_vals = {'messages':messages, 'email':email, 'logout_url':logout_url}
 
-    self.response.write(template.render())
-#   self.response.write(template.render(template_vals))
+        self.response.write(template.render())
+#       self.response.write(template.render(template_vals))
 
 class OutboxHandler(webapp2.RequestHandler):
     def get(self):
 
-    template = jinja_environment.get_template("outbox.html")
-#   template_vals = {'messages':messages, 'email':email, 'logout_url':logout_url}
+        template = jinja_environment.get_template("outbox.html")
+#       template_vals = {'messages':messages, 'email':email, 'logout_url':logout_url}
 
-    self.response.write(template.render())
-#   self.response.write(template.render(template_vals))
+        self.response.write(template.render())
+#        self.response.write(template.render(template_vals))
 
 class NewLetterHandler(webapp2.RequestHandler):
     def get(self):
 
-    template = jinja_environment.get_template("newletter.html")
-#   template_vals = {'messages':messages, 'email':email, 'logout_url':logout_url}
+        template = jinja_environment.get_template("newletter.html")
+    #   template_vals = {'messages':messages, 'email':email, 'logout_url':logout_url}
 
-    self.response.write(template.render())
-#   self.response.write(template.render(template_vals))
+        self.response.write(template.render())
+    #   self.response.write(template.render(template_vals))
 
 class LetterHandler(webapp2.RequestHandler):
     def get(self):
 
-    template = jinja_environment.get_template("letter.html")
-#   template_vals = {'messages':messages, 'email':email, 'logout_url':logout_url}
+        template = jinja_environment.get_template("letter.html")
+    #   template_vals = {'messages':messages, 'email':email, 'logout_url':logout_url}
 
-    self.response.write(template.render())
-#   self.response.write(template.render(template_vals))
+        self.response.write(template.render())
+    #   self.response.write(template.render(template_vals))
 
 
 
