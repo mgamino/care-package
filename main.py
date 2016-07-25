@@ -2,10 +2,24 @@ import webapp2
 import jinja2
 import os
 from google.appengine.api import users
+from google.appengine.ext import ndb
 
 template_dir = os.path.join(os.path.dirname(__file__), 'templates')
 jinja_environment = jinja2.Environment(
   loader=jinja2.FileSystemLoader(template_dir))
+
+class User(ndb.Model):
+    name = ndb.TextProperty()
+    email = ndb.StringProperty()
+#   location = ndb.GeoPtProperty()
+
+class Letter(ndb.Model):
+    text = ndb.TextProperty()
+    email = ndb.StringProperty()
+    datetime = ndb.DateTimeProperty( auto_now_add=True)
+
+
+
 
 
 class MainHandler(webapp2.RequestHandler):
