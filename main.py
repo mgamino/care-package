@@ -79,6 +79,15 @@ class LetterHandler(webapp2.RequestHandler):
         self.response.write(template.render())
     #   self.response.write(template.render(template_vals))
 
+class AboutHandler(webapp2.RequestHandler):
+    def get(self):
+
+        template = jinja_environment.get_template("about.html")
+    #   template_vals = {'messages':messages, 'email':email, 'logout_url':logout_url}
+
+        self.response.write(template.render())
+    #   self.response.write(template.render(template_vals))
+
 
 
 app = webapp2.WSGIApplication([
@@ -86,5 +95,6 @@ app = webapp2.WSGIApplication([
     ('/inbox.html', InboxHandler),
     ('/outbox.html', OutboxHandler),
     ('/newletter.html', NewLetterHandler),
-    ('/letter.html', LetterHandler)
+    ('/letter.html', LetterHandler),
+    ('/about.html', AboutHandler)
 ], debug=True)
