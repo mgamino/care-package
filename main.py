@@ -83,8 +83,8 @@ class LetterHandler(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
-    ('/inbox', InboxHandler),
-    ('/outbox', OutboxHandler),
-    ('/newletter', NewLetterHandler),
-    ('/letter', LetterHandler)
+    ('/inbox.html', InboxHandler),
+    ('/outbox.html', OutboxHandler),
+    ('/newletter.html', NewLetterHandler),
+    ('/letter.html', LetterHandler)
 ], debug=True)
