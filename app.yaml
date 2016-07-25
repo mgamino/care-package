@@ -1,4 +1,4 @@
-application: test
+application: care-package
 version: 1
 runtime: python27
 api_version: 1
@@ -9,6 +9,12 @@ handlers:
   static_files: favicon.ico
   upload: favicon\.ico
 
+- url: /images
+  static_dir: images
+
+- url: /stylesheets
+  static_dir: stylesheets
+
 - url: /js
   static_dir: js
 
@@ -18,3 +24,5 @@ handlers:
 libraries:
 - name: webapp2
   version: "2.5.2"
+- name: jinja2
+  version: latest
