@@ -3,26 +3,24 @@
   <head>
     <title>WTF Is A Post Office</title>
     <script src="http://maps.googleapis.com/maps/api/js"></script>
-    <script>
-    function initialize() {
-      var mapProp = {
-        center:new google.maps.LatLng(37.4200280,-122.0750580),
-        zoom:5,
-        mapTypeId:google.maps.MapTypeId.ROADMAP
-      };
-      var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-    }
-    google.maps.event.addDomListener(window, 'load', initialize);
-
-    </script>
+    <script src="js/home.js"></script>
     <link rel="stylesheet" href="stylesheets/home.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato|Oswald:400,700' rel='stylesheet' type='text/css'>
   </head>
   <body>
-    <h1>WTF Is A Post Office</h1>
+    <h1>WTF IS A POST OFFICE</h1>
     <h2>Send letters to <em>any</em> friend, <em>any</em>time, <em>any</em>where!</h2>
     <div id="googleMap" style="width:500px;height:380px;"></div>
-    <button> INBOX </button>
     <br>
-    <button> OUTBOX </button>
+    <a href="/inbox.html" class="button"> INBOX </a>
+    <a href="/outbox.html" class="button"> OUTBOX </a>
+    <br>
+    <br>
+    <a href="/newletter.html" class="button"> SEND MAIL </a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <a href="/about.html" class="topbutton"> ABOUT US </a>
   </body>
 </html>
