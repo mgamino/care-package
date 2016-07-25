@@ -9,15 +9,16 @@ jinja_environment = jinja2.Environment(
   loader=jinja2.FileSystemLoader(template_dir))
 
 class User(ndb.Model):
-    name = ndb.TextProperty()
+    name = ndb.StringProperty()
     email = ndb.StringProperty()
 #   location = ndb.GeoPtProperty()
 
 class Letter(ndb.Model):
     text = ndb.TextProperty()
-    email = ndb.StringProperty()
-    datetime = ndb.DateTimeProperty( auto_now_add=True)
-
+    theme = ndb.StringProperty()
+    deliverydate = ndb.DateTimeProperty()
+    sender_key = ndb.KeyProperty(kind = User)
+    receiver_key = ndb.KeyProperty(kind = User)
 
 
 
@@ -82,8 +83,8 @@ class LetterHandler(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
-    ('inbox.html', InboxHandler),
-    ('outbox.html', OutboxHandler),
-    ('newletter.html', NewLetterHandler),
-    ('letter.html', LetterHandler)
+    ('/inbox', InboxHandler),
+    ('/outbox', OutboxHandler),
+    ('/newletter', NewLetterHandler),
+    ('/letter', LetterHandler)
 ], debug=True)
