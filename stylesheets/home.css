@@ -1,15 +1,20 @@
 html {
   text-align: center;
+  background-image: url("/images/background3.png");
+  /* Background pattern from subtlepatterns.com */
 }
 
 h1 {
   font-family: 'Oswald', sans-serif;
   font-size: 60px;
+  background-color: #77C9D4;
+  color: white;
 }
 
 h2 {
   font-family: 'Lato', sans-serif;
   font-size: 20px;
+  color: #A5A5AF;
 }
 
 #googleMap {
@@ -17,7 +22,7 @@ h2 {
 }
 
 .button {
-  background-color: mediumaquamarine;
+  background-color: #57BC90;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -30,7 +35,7 @@ h2 {
 }
 
 .topbutton {
-  background-color: lightseagreen;
+  background-color: #015249;
   border: none;
   color: white;
   padding: 15px 32px;

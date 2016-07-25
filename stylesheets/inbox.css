@@ -1,5 +1,31 @@
 div.message{
-  width:300px;
-  border:solid;
-  border-color: black;
+  margin: auto;
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+  color: white;
+  width: 180px;
+  height: 30px;
+  background-color: #57BC90;
+}
+
+div.messagecontent {
+  vertical-align: middle;
+}
+
+html {
+  text-align: center;
+  background-image: url("/images/background3.png");
+  /* Background pattern from subtlepatterns.com */
+}
+
+h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 60px;
+  background-color: #77C9D4;
+  color: white;
+}
+
+h3 {
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
 }
