@@ -25,5 +25,5 @@ LETTER class
   text            TextProperty          letter text
   theme           StringProperty        name of CSS stylesheet used to format letter
   deliverydate    DateTimeProperty      date to be delivered
-  sender_key      KeyProperty           user who sent letter
-  receiver_key    KeyProperty           user who letter is sent to
+  sender_email    StringProperty        user who sent letter
+  receiver_email  StringProperty        user who letter is sent to
