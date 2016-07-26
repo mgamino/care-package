@@ -1,4 +1,4 @@
-div.message{
+div.from{
   margin: auto;
   font-family: 'Oswald', sans-serif;
   font-size: 20px;
@@ -6,6 +6,9 @@ div.message{
   width: 480px;
   height: 30px;
   background-color: #57BC90;
+}
+div.message{
+  float:left;
 }
 
 div.messagecontent {

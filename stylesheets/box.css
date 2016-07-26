@@ -45,9 +45,42 @@
 	to { transform: rotateY(360deg); }
 }
 
-.cube:hover {
+.cube {
 	animation: spin 10s infinite linear;
 }
+
+.cube div:hover {
+	width: 200px;
+	height: 200px;
+  border: #44c7dc solid 2px;
+}
+.back {
+	transform: translateZ(-102px) rotateY(180deg);
+}
+.right {
+	transform: rotateY(-270deg) translateX(102px);
+	transform-origin: top right;
+}
+.left {
+	transform: rotateY(270deg) translateX(-102px);
+	transform-origin: center left;
+}
+.top {
+	transform: rotateX(-90deg) translateY(-52px);
+	transform-origin: top center;
+}
+.bottom {
+	transform: rotateX(90deg) translateY(52px);
+	transform-origin: bottom center;
+}
+.front {
+	transform: translateZ(52px);
+}
+
+.cube:hover {
+	animation: spin 4s infinite linear;
+}
+
 
 #cross {
   background: white;
