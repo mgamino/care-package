@@ -1,0 +1,25 @@
+html {
+  /*Replace html with letter*/
+  background-image: url("/images/symphony.png");
+  /* Background pattern from subtlepatterns.com */
+}
+
+h1 {
+  font-family: 'Pompiere', sans-serif;
+  font-size: 30px;
+  color: white;
+  background-color: #FA7C92;
+}
+
+p {
+  font-family: 'Buda', sans-serif;
+  font-size: 16px;
+  color: #6EC4DB;
+}
+
+h3 {
+  font-family: 'Pompiere', sans-serif;
+  font-size: 16px;
+  color: #66AB8C;
+  background-color: #FFF7C0;
+}

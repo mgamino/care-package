@@ -1,0 +1,24 @@
+html {
+  /*Replace html with letter*/
+  background-image: url("/images/crossword.png");
+  /* Background pattern from subtlepatterns.com */
+}
+
+h1 {
+  font-family: 'Rufina', sans-serif;
+  font-size: 30px;
+  color: white;
+  background-color: #0B3C5D;
+}
+
+p {
+  font-family: 'Signika', sans-serif;
+  font-size: 16px;
+  color: #1D2731;
+}
+
+h3 {
+  font-family: 'Rufina', sans-serif;
+  font-size: 16px;
+  color: #D9B310;
+}

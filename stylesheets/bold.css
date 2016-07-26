@@ -1,0 +1,23 @@
+html {
+  /*Replace html with letter*/
+  background-color: #98878F;
+  /* Background pattern from subtlepatterns.com */
+}
+
+h1 {
+  font-family: 'Raleway';
+  font-size: 30px;
+  color: #494E6B;
+}
+
+p {
+  font-family: 'Goudy Bookletter 1911', sans-serif;
+  font-size: 16px;
+  color: #192231;
+}
+
+h3 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  color: #985E6D;
+}
