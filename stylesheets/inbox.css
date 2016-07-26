@@ -3,13 +3,18 @@ div.from{
   font-family: 'Oswald', sans-serif;
   font-size: 20px;
   color: white;
-  width: 473px;
+  width: 430px;
   height: 30px;
+
   background-color: #57BC90;
 }
-div.message{
+.message{
+  margin-right: 20px;
+  margin-left: 20px;
   float:left;
   height: 200px;
+  width:430px;
+  text-decoration: none;
 }
 
 div.messagecontent {

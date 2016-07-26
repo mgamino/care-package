@@ -1,5 +1,5 @@
 function setup(){
-  $(".message").hover(
+  $(".wrap").hover(
     function(){
       $(this).find(".cube").stop().css({
       	"animation": "spin 1s infinite linear"
@@ -9,7 +9,7 @@ function setup(){
       });
     }
   );
-  $(".message").mouseleave(
+  $(".wrap").mouseleave(
     function(){
       $(this).find(".cube").stop().css({
       	"animation": "spin 4s infinite linear"
