@@ -14,7 +14,9 @@ div.from{
   float:left;
   height: 200px;
   width:430px;
-  text-decoration: none;
+}
+a{
+    text-decoration: none;
 }
 
 div.messagecontent {
