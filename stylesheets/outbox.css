@@ -11,15 +11,24 @@ h1 {
   color: white;
 }
 
-div.message{
-  margin: auto;
+center{
+  margin:0px;
+}
+.message{
   font-family: 'Oswald', sans-serif;
   font-size: 20px;
+  margin: 50px;
   /*color: white;
   width: 180px;
   height: 30px;
   background-color: #57BC90;*/
+  height: 200px;
+  width: 200px;
+  float:left;
+
 }
+
+
 .rbutton{
   background-color: #A4D555;
   border: none;
@@ -36,18 +45,21 @@ div.message{
 .wrap {
 	perspective: 800px;
 	perspective-origin: 50% 100px;
+  margin-top: 10px;
+
 }
 .cube {
 	position: relative;
 	width: 102px;
 	transform-style: preserve-3d;
+
 }
 .cube div {
 	position: absolute;
 	width: 100px;
 	height: 100px;
   background-color:#4cdef5;
-  border: #44c7dc solid 2px ;
+  border: #44c7dc solid 2px;
 }
 .back {
 	transform: translateZ(-52px) rotateY(180deg);
@@ -77,7 +89,7 @@ div.message{
 	to { transform: rotateY(360deg); }
 }
 
-.cube {
+.cube:hover {
 	animation: spin 10s infinite linear;
 }
 

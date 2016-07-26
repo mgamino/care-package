@@ -10,25 +10,30 @@
   <body>
     <h1>YOUR OUTBOX</h1>
     <p>hello</p>
-    <center><div class="delivered">
+      <div class="delivered">
       {% for letter in deliveredletters %}
         <div class = "message">
           <center>{{letter.receiver_email}}</center>
-          <div class = "textbox">
-            <div class="wrap">
-            	<div class="cube">
-            		<div class="front"><div id="cross"></div></div>
-            		<div class="back"><div id="cross"></div></div>
-            		<div class="top"><div id="cross"></div></div>
-            		<div class="bottom"><div id="cross"></div></div>
-            		<div class="left"><div id="cross"></div></div>
-            		<div class="right"><div id="cross"></div></div>
-            	</div>
+            <div class = "textbox">
+              <div class="wrap">
+                <center>
+                	<div class="cube">
+                		<div class="front"><div id="cross"></div></div>
+                		<div class="back"><div id="cross"></div></div>
+                		<div class="top"><div id="cross"></div></div>
+                		<div class="bottom"><div id="cross"></div></div>
+                		<div class="left"><div id="cross"></div></div>
+                		<div class="right"><div id="cross"></div></div>
+                	</div>
+                </center>
+              </div>
             </div>
           </div>
         </div>
-      {% endfor %}
-    </div></center>
+      </div>
+    {% endfor %}
+  </div>
+
   <!-- <div class="sent">
       {% for letter in undeliveredletters %}
         <div class = "message">
@@ -48,6 +53,6 @@
         </div>
       {% endfor %}
     </div> -->
-    <a href="/" class="rbutton"> RETURN <br> HOME </a>
+    <div><a href="/" class="rbutton"> RETURN <br> HOME </a></div>
   </body>
 </html>
