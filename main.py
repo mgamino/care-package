@@ -59,7 +59,6 @@ class OutboxHandler(webapp2.RequestHandler):
 
         template_vals = {'undeliveredletters':undeliveredletters, 'deliveredletters':deliveredletters}
 
-        self.response.write(template.render())
         self.response.write(template.render(template_vals))
 
 class NewLetterHandler(webapp2.RequestHandler):
