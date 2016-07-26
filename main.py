@@ -123,8 +123,10 @@ class NewLetterHandler(webapp2.RequestHandler):
 class LetterHandler(webapp2.RequestHandler):
     def get(self):
 
+        
+
         template = jinja_environment.get_template("letter.html")
-    #   template_vals = {'messages':messages, 'email':email, 'logout_url':logout_url}
+        template_vals = {'messages':messages, 'email':email, 'logout_url':logout_url}
 
         self.response.write(template.render())
     #   self.response.write(template.render(template_vals))
