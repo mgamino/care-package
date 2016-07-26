@@ -5,24 +5,34 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js'></script>
     <script src="js/inbox.js"></script>
     <link rel="stylesheet" href="/stylesheets/inbox.css">
+    <link rel="stylesheet" href="/stylesheets/box.css">
     <link href='https://fonts.googleapis.com/css?family=Lato|Oswald:400,700' rel='stylesheet' type='text/css'>
   </head>
   <body>
     <section><h1>MY INBOX</h1></section>
     <div class="recieved">
       {% for letter in letters %}
-
-        <div class = "message">
-          <center>{{letter.sender_email}}</center>
+          <div class = "message">
+            <div class ="from">{{letter.sender_email}}</center></div>
+              <div class = "textbox">
+                <div class="wrap">
+                  <center>
+                  	<div class="cube">
+                  		<div class="front"><div id="cross"></div></div>
+                  		<div class="back"><div id="cross"></div></div>
+                  		<div class="top"><div id="cross"></div></div>
+                  		<div class="bottom"><div id="cross"></div></div>
+                  		<div class="left"><div id="cross"></div></div>
+                  		<div class="right"><div id="cross"></div></div>
+                  	</div>
+                  </center>
+                </div>
+              </div>
+            </div>
+      {% endfor %}
+          </div>
           <!-- <br>
           <div class="messagecontent"><center>NAME</center></div> -->
-          <br>
-          <div class ="textbox">
-            {{letter.text}}
-          </div>
-        </div>
-      {% endfor %}
-    </div>
     <br>
     <br>
     <br>
