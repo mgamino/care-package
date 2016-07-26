@@ -28,10 +28,10 @@ class MainHandler(webapp2.RequestHandler):
 
 
             template = jinja_environment.get_template("home.html")
-#           template_vals = {'messages':messages, 'email':email, 'logout_url':logout_url}
+            template_vals = {'email':email, 'logout_url':logout_url}
 
-            self.response.write(template.render())
-#           self.response.write(template.render(template_vals))
+
+            self.response.write(template.render(template_vals))
 
         else:
             login_url = users.CreateLoginURL('/')
