@@ -1,8 +1,7 @@
 .wrap {
 	perspective: 800px;
 	perspective-origin: 50% 100px;
-  margin-top: 10px;
-
+  margin-top: 30px;
 }
 .cube {
 	position: relative;
