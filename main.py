@@ -3,7 +3,7 @@ import jinja2
 import os
 from google.appengine.api import users
 from google.appengine.ext import ndb
-
+from datetime import date
 import logging
 
 template_dir = os.path.join(os.path.dirname(__file__), 'templates')
@@ -81,18 +81,27 @@ class NewLetterHandler(webapp2.RequestHandler):
         receiver_email = self.request.get('receiver')
         text = self.request.get('text')
         theme = "THIS IS A TEST"
-        date = self.request.get('deliverydate')
+        datetemp = self.request.get('deliverydate')
         logging.info(date)
-        dates = date.split('-')
+        dates = datetemp.split('-')
+        year = int(dates[0])
+        month = int(dates[1])
+        day = int(dates[2])
 
-            #NEED TO DO THE THING TO PASS THOSE INTO DATE PROPERTY YIKE
+        logging.info(year)
+        logging.info(type(year))
+        logging.info(month)
+        logging.info(day)
+
+        deliverydate = date(year, month, day)
+        logging.info(deliverydate)
 
         sender = users.get_current_user()
         sender_email = sender.email()
 
         receiver = "testing"
 
-        letter = Letter(text = text, theme = theme, sender_email = sender_email, receiver_email = receiver_email)
+        letter = Letter(text = text, theme = theme, sender_email = sender_email, receiver_email = receiver_email, deliverydate = deliverydate)
         letter.put()
         self.redirect("/")
 
