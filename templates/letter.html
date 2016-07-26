@@ -3,21 +3,30 @@
   <head>
     <title>Letter</title>
     <link href='https://fonts.googleapis.com/css?family=Oswald|Lato|Pompiere|Buda:300|Raleway|Goudy+Bookletter+1911|Allan|Cardo|Rufina|Signika' rel='stylesheet' type='text/css'>
+    {% if theme == "cute" %}
+      <link rel="stylesheet" href="stylesheets/cute.css">
+    {% elsif theme == "classic" %}
+      <link rel="stylesheet" href="stylesheets/classic.css">
+    {% elsif theme == "bold" %}
+      <link rel="stylesheet" href="stylesheets/bold.css">
+    {% elsif theme == "neon" %}
+      <link rel="stylesheet" href="stylesheets/neon.css">
+    {% else %}
+      <link rel="stylesheet" href="stylesheets/elegant.css">
+    {% endif %}
   </head>
   <body>
     <div class="letter">
       <div class = "message">
-        <center>{{sender.name}}</center>
-        <div>Location</div>
-        <div class ="text">
-          {{sender.text}}
+        <h1>MESSAGE</h1>
+          <div class ="text">
+            <p>{{sender.text}}</p>
         </div>
-        <div class = "image">
-          Image stuff. Probable make it look like a photo graph
-        </div>
+        <h3>{{sender.name}}</h3>
       </div>
-    </div>
-    <button>REPLY</button>
+      </div>
+
     <a href="/" class="rbutton"> RETURN HOME </a>
+    <a href="/inbox.html" class="rbutton"> INBOX </a>
   </body>
 </html>
