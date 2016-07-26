@@ -8,24 +8,18 @@ template_dir = os.path.join(os.path.dirname(__file__), 'templates')
 jinja_environment = jinja2.Environment(
   loader=jinja2.FileSystemLoader(template_dir))
 
-class User(ndb.Model):
-    name = ndb.StringProperty()
-    email = ndb.StringProperty()
-#   location = ndb.GeoPtProperty()
-
 class Letter(ndb.Model):
     text = ndb.TextProperty()
     theme = ndb.StringProperty()
-    deliverydate = ndb.DateTimeProperty()
-    sender_key = ndb.KeyProperty(kind = User)
-    receiver_key = ndb.KeyProperty(kind = User)
-
-
+    deliverydate = ndb.DateTimeProperty( auto_now_add = True)
+    sender_id = ndb.StringProperty()
+    receiver_id = ndb.StringProperty()
 
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        user=users.get_current_user()
+        user = users.get_current_user()
+
         email = user.email()
 
 
@@ -69,6 +63,22 @@ class NewLetterHandler(webapp2.RequestHandler):
 
         self.response.write(template.render())
     #   self.response.write(template.render(template_vals))
+    def post(self):
+        receiver_email = self.request.get('receiver')
+        text = self.request.get('text')
+        theme = "THIS IS A TEST"
+        sender = users.get_current_user()
+        sender_id = sender.user_id()
+
+        receiver = "testing"
+
+        letter = Letter(text = text, theme = theme, sender_id = sender_id, receiver_id = receiver)
+        letter.put()
+
+        sentletters = Letter.query(sender_id == users.get_current_user().user_id()).fetch()
+
+
+
 
 class LetterHandler(webapp2.RequestHandler):
     def get(self):
