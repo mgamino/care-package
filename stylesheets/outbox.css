@@ -46,8 +46,8 @@ div.message{
 	position: absolute;
 	width: 100px;
 	height: 100px;
-  background-color:orange;
-  border: darkorange solid 2px ;
+  background-color:#4cdef5;
+  border: #44c7dc solid 2px ;
 }
 .back {
 	transform: translateZ(-52px) rotateY(180deg);
@@ -82,19 +82,19 @@ div.message{
 }
 
 #cross {
-  background: red;
-  height: 100px;
+  background: white;
+  height: 104px;
   position:relative;
   width: 20px;
-  margin:auto;
+  top:-1.9px;
   border: none;
 }
 #cross:after {
-  background:red;
+  background:white;
   content: "";
   height: 20px;
-  left: -40px;
+  left: -42px;
   position: absolute;
   top: 40px;
-  width: 100px;
+  width: 104px;
 }
