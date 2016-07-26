@@ -4,6 +4,8 @@ import os
 from google.appengine.api import users
 from google.appengine.ext import ndb
 
+import logging
+
 template_dir = os.path.join(os.path.dirname(__file__), 'templates')
 jinja_environment = jinja2.Environment(
   loader=jinja2.FileSystemLoader(template_dir))
@@ -11,7 +13,7 @@ jinja_environment = jinja2.Environment(
 class Letter(ndb.Model):
     text = ndb.TextProperty()
     theme = ndb.StringProperty()
-    deliverydate = ndb.DateTimeProperty( auto_now_add = True)
+    deliverydate = ndb.DateProperty()
     sender_email = ndb.StringProperty()
     receiver_email = ndb.StringProperty()
 
@@ -79,6 +81,12 @@ class NewLetterHandler(webapp2.RequestHandler):
         receiver_email = self.request.get('receiver')
         text = self.request.get('text')
         theme = "THIS IS A TEST"
+        date = self.request.get('deliverydate')
+        logging.info(date)
+        dates = date.split('-')
+
+            #NEED TO DO THE THING TO PASS THOSE INTO DATE PROPERTY YIKE
+
         sender = users.get_current_user()
         sender_email = sender.email()
 
