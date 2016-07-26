@@ -155,11 +155,3 @@ h2 {
     font-size: 20px;
     color: black;
 }
-
-.dropdown1:hover .dropdown-content1 {
-    display: block;
-}
-
-.dropdown2:hover .dropdown-content2 {
-    display: block;
-}

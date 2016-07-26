@@ -8,11 +8,28 @@ function initialize() {
 }
 google.maps.event.addDomListener(window, 'load', initialize);
 
-// $(document).ready(function(){
-//     $("dropdown1").hover(function(){
-//         $("dropdown-content1").slideDown(1000);
-//     });
-//     $("dropdown2").hover(function(){
-//         $("dropdown-content2").slideDown(1000);
-//     });
-// });
+function setup(){
+
+  $(".dropdown1").mouseenter(
+    function(){
+      $(".dropdown-content1").slideDown();
+    }
+  );
+  $(".dropdown2").mouseenter(
+    function(){
+      $(".dropdown-content2").slideDown();
+    }
+  );
+  $(".dropdown1").mouseleave(
+    function() {
+      $(".dropdown-content1").slideUp();
+    }
+  );
+  $(".dropdown2").mouseleave(
+    function() {
+      $(".dropdown-content2").slideUp();
+    }
+  );
+}
+
+$(document).ready(setup);
