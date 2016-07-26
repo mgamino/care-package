@@ -12,8 +12,8 @@ class Letter(ndb.Model):
     text = ndb.TextProperty()
     theme = ndb.StringProperty()
     deliverydate = ndb.DateTimeProperty( auto_now_add = True)
-    sender_id = ndb.StringProperty()
-    receiver_id = ndb.StringProperty()
+    sender_email = ndb.StringProperty()
+    receiver_email = ndb.StringProperty()
 
 
 class MainHandler(webapp2.RequestHandler):
@@ -50,10 +50,17 @@ class OutboxHandler(webapp2.RequestHandler):
     def get(self):
 
         template = jinja_environment.get_template("outbox.html")
-#       template_vals = {'messages':messages, 'email':email, 'logout_url':logout_url}
+        user = users.get_current_user()
+        email = user.email()
+
+        undeliveredletters = Letter.query(Letter.sender_email == email).fetch()
+        deliveredletters = Letter.query(Letter.sender_email == email).fetch()
+
+
+        template_vals = {'undeliveredletters':undeliveredletters, 'deliveredletters':deliveredletters}
 
         self.response.write(template.render())
-#        self.response.write(template.render(template_vals))
+        self.response.write(template.render(template_vals))
 
 class NewLetterHandler(webapp2.RequestHandler):
     def get(self):
@@ -68,15 +75,13 @@ class NewLetterHandler(webapp2.RequestHandler):
         text = self.request.get('text')
         theme = "THIS IS A TEST"
         sender = users.get_current_user()
-        sender_id = sender.user_id()
+        sender_email = sender.email()
 
         receiver = "testing"
 
-        letter = Letter(text = text, theme = theme, sender_id = sender_id, receiver_id = receiver)
+        letter = Letter(text = text, theme = theme, sender_email = sender_email, receiver_email = receiver_email)
         letter.put()
-
-        sentletters = Letter.query(sender_id == users.get_current_user().user_id()).fetch()
-
+        self.redirect("/")
 
 
 
