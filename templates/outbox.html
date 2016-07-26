@@ -9,12 +9,13 @@
   </head>
   <body>
     <h1>YOUR OUTBOX</h1>
-    <p>hello</p>
+
     <center><div class="delivered">
       {% for letter in deliveredletters %}
         <div class = "message">
           <center>{{letter.receiver_email}}</center>
           <div class = "textbox">
+            <center>{{letter.text}}</center>
             <div class="wrap">
             	<div class="cube">
             		<div class="front"><div id="cross"></div></div>
@@ -48,6 +49,6 @@
         </div>
       {% endfor %}
     </div> -->
-    <a href="/" class="rbutton"> RETURN <br> HOME </a>
+    <a href="/" class="rbutton"> RETURN HOME </a>
   </body>
 </html>
