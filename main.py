@@ -41,10 +41,16 @@ class InboxHandler(webapp2.RequestHandler):
     def get(self):
 
         template = jinja_environment.get_template("inbox.html")
-#       template_vals = {'messages':messages, 'email':email, 'logout_url':logout_url}
+        user = users.get_current_user()
+        email = user.email()
 
-        self.response.write(template.render())
-#       self.response.write(template.render(template_vals))
+        letters = Letter.query(Letter.receiver_email == email).fetch()
+
+
+        template_vals = {'letters':letters}
+
+
+        self.response.write(template.render(template_vals))
 
 class OutboxHandler(webapp2.RequestHandler):
     def get(self):

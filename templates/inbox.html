@@ -10,14 +10,16 @@
   <body>
     <section><h1>MY INBOX</h1></section>
     <div class="recieved">
-      <!--For loop reciever key-->
+      {% for letter in letters %}
 
         <div class = "message">
+          <center>{{letter.sender_email}}</center>
           <div class="messagecontent"><center>NAME</center></div>
           <div class ="textbox">
+            {{letter.text}}
           </div>
         </div>
-      <!--end loop-->
+      {% endfor %}
     </div>
 <a href="/" class="rbutton"> RETURN <br> HOME </a>
 
