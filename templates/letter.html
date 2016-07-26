@@ -5,11 +5,11 @@
     <link href='https://fonts.googleapis.com/css?family=Oswald|Lato|Pompiere|Buda:300|Raleway|Goudy+Bookletter+1911|Allan|Cardo|Rufina|Signika' rel='stylesheet' type='text/css'>
     {% if theme == "cute" %}
       <link rel="stylesheet" href="stylesheets/cute.css">
-    {% elsif theme == "classic" %}
+    {% elif theme == "classic" %}
       <link rel="stylesheet" href="stylesheets/classic.css">
-    {% elsif theme == "bold" %}
+    {% elif theme == "bold" %}
       <link rel="stylesheet" href="stylesheets/bold.css">
-    {% elsif theme == "neon" %}
+    {% elif theme == "neon" %}
       <link rel="stylesheet" href="stylesheets/neon.css">
     {% else %}
       <link rel="stylesheet" href="stylesheets/elegant.css">
@@ -20,9 +20,9 @@
       <div class = "message">
         <h1>MESSAGE</h1>
           <div class ="text">
-            <p>{{sender.text}}</p>
+            <p>{{letter.text}}</p>
         </div>
-        <h3>{{sender.name}}</h3>
+        <h3>{{letter.sender_email}}</h3>
       </div>
       </div>
 

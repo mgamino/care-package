@@ -122,14 +122,17 @@ class NewLetterHandler(webapp2.RequestHandler):
 
 class LetterHandler(webapp2.RequestHandler):
     def get(self):
+        urlsafe_key = self.request.get('key')
+        key = ndb.Key(urlsafe = urlsafe_key)
+        letter = key.get()
 
-        
+        logging.info(letter)
+
 
         template = jinja_environment.get_template("letter.html")
-        template_vals = {'messages':messages, 'email':email, 'logout_url':logout_url}
+        template_vals = {'letter':letter}
 
-        self.response.write(template.render())
-    #   self.response.write(template.render(template_vals))
+        self.response.write(template.render(template_vals))
 
 class AboutHandler(webapp2.RequestHandler):
     def get(self):
@@ -147,6 +150,6 @@ app = webapp2.WSGIApplication([
     ('/inbox.html', InboxHandler),
     ('/outbox.html', OutboxHandler),
     ('/newletter.html', NewLetterHandler),
-    ('/letter.html', LetterHandler),
+    ('/letter', LetterHandler),
     ('/about.html', AboutHandler)
 ], debug=True)
