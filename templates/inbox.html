@@ -4,7 +4,7 @@
     <title>My Inbox</title>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js'></script>
     <script src="js/inbox.js"></script>
-    <link rel="stylesheet" href="stylesheets/inbox.css">
+    <link rel="stylesheet" href="/stylesheets/inbox.css">
     <link href='https://fonts.googleapis.com/css?family=Lato|Oswald:400,700' rel='stylesheet' type='text/css'>
   </head>
   <body>
@@ -14,14 +14,19 @@
 
         <div class = "message">
           <center>{{letter.sender_email}}</center>
-          <div class="messagecontent"><center>NAME</center></div>
+          <!-- <br>
+          <div class="messagecontent"><center>NAME</center></div> -->
+          <br>
           <div class ="textbox">
             {{letter.text}}
           </div>
         </div>
       {% endfor %}
     </div>
-<a href="/" class="rbutton"> RETURN <br> HOME </a>
+    <br>
+    <br>
+    <br>
+<a href="/" id = "return" class="rbutton"> RETURN HOME </a>
 
   </body>
 </html>

@@ -1,0 +1,88 @@
+.wrap {
+	perspective: 800px;
+	perspective-origin: 50% 100px;
+  margin-top: 10px;
+
+}
+.cube {
+	position: relative;
+	width: 102px;
+	transform-style: preserve-3d;
+
+}
+.cube div {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+  background-color:#4cdef5;
+  border: #44c7dc solid 2px;
+}
+.back {
+	transform: translateZ(-52px) rotateY(180deg);
+}
+.right {
+	transform: rotateY(-270deg) translateX(52px);
+	transform-origin: top right;
+}
+.left {
+	transform: rotateY(270deg) translateX(-52px);
+	transform-origin: center left;
+}
+.top {
+	transform: rotateX(-90deg) translateY(-52px);
+	transform-origin: top center;
+}
+.bottom {
+	transform: rotateX(90deg) translateY(52px);
+	transform-origin: bottom center;
+}
+.front {
+	transform: translateZ(52px);
+}
+
+@keyframes spin {
+	from { transform: rotateY(0); }
+	to { transform: rotateY(360deg); }
+}
+
+.cube:hover {
+	animation: spin 10s infinite linear;
+}
+
+#cross {
+  background: white;
+  height: 104px;
+  position:relative;
+  width: 20px;
+  top:-1.9px;
+  border: none;
+}
+#cross:after {
+  background:white;
+  content: "";
+  height: 20px;
+  left: -42px;
+  position: absolute;
+  top: 40px;
+  width: 104px;
+}
+
+/*<div class = "message">
+  <center>{{letter.receiver_email}}</center>
+    <div class = "textbox">
+      <div class="wrap">
+        <center>
+          <div class="cube">
+            <div class="front"><div id="cross"></div></div>
+            <div class="back"><div id="cross"></div></div>
+            <div class="top"><div id="cross"></div></div>
+            <div class="bottom"><div id="cross"></div></div>
+            <div class="left"><div id="cross"></div></div>
+            <div class="right"><div id="cross"></div></div>
+          </div>
+        </center>
+      </div>
+    </div>
+  </div>
+</div>
+</div>*/
