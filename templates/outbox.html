@@ -10,24 +10,24 @@
   <body>
     <section><h1>Your Outbox</h1></section>
     <div class="delivered">
-      <!--For loop sender letter key-->
+      {% for letter in deliveredletters %}
         <div class = "message">
-          <center>Name</center>
+          <center>{{letter.receiver_email}}</center>
           <div class = "textbox">
-            This is some text that your friend has recieved
+            {{letter.text}}
           </div>
         </div>
-      <!--end loop-->
+      {% endfor %}
     </div>
     <div class="sent">
-      <!--For loop sender letter key-->
+      {% for letter in undeliveredletters %}
         <div class = "message">
           <center>Name</center>
           <div class = "textbox">
             This is text that you typed but they have not recieved
           </div>
         </div>
-      <!--end loop-->
+      {% endfor %}
     </div>
   </body>
 </html>
