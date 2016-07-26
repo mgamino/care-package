@@ -10,24 +10,24 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 function setup(){
 
-  $(".dropdown1").mouseenter(
+  $(".dropdown1").hover(
     function(){
-      $(".dropdown-content1").slideDown();
+      $(".dropdown-content1").stop().slideDown();
     }
   );
-  $(".dropdown2").mouseenter(
+  $(".dropdown2").hover(
     function(){
-      $(".dropdown-content2").slideDown();
+      $(".dropdown-content2").stop().slideDown();
     }
   );
   $(".dropdown1").mouseleave(
     function() {
-      $(".dropdown-content1").slideUp();
+      $(".dropdown-content1").stop().slideUp();
     }
   );
   $(".dropdown2").mouseleave(
     function() {
-      $(".dropdown-content2").slideUp();
+      $(".dropdown-content2").stop().slideUp();
     }
   );
 }
