@@ -3,6 +3,8 @@ import jinja2
 import os
 from google.appengine.api import users
 from google.appengine.ext import ndb
+import time
+import datetime
 from datetime import date
 import logging
 
@@ -60,9 +62,21 @@ class OutboxHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template("outbox.html")
         user = users.get_current_user()
         email = user.email()
+        # year = int(time.strftime("%Y"))
+        # month = int(time.strftime("%m"))
+        # day = int(time.strftime("%d"))
+        #
+        # present = date(year, month, day)
+        # logging.info(present)
+        # logging.info(type(present))
+        #
+        # present = present.date()
+        present = datetime.date.today()
 
-        undeliveredletters = Letter.query(Letter.sender_email == email).fetch()
-        deliveredletters = Letter.query(Letter.sender_email == email).fetch()
+
+        logging.info(dir(Letter.deliverydate))
+        undeliveredletters = Letter.query(Letter.sender_email == email, Letter.deliverydate > present).fetch()
+        deliveredletters = Letter.query(Letter.sender_email == email, Letter.deliverydate <= present).fetch()
 
 
         template_vals = {'undeliveredletters':undeliveredletters, 'deliveredletters':deliveredletters}
@@ -82,7 +96,6 @@ class NewLetterHandler(webapp2.RequestHandler):
         text = self.request.get('text')
         theme = "THIS IS A TEST"
         datetemp = self.request.get('deliverydate')
-        logging.info(date)
         dates = datetemp.split('-')
         year = int(dates[0])
         month = int(dates[1])
@@ -94,7 +107,6 @@ class NewLetterHandler(webapp2.RequestHandler):
         logging.info(day)
 
         deliverydate = date(year, month, day)
-        logging.info(deliverydate)
 
         sender = users.get_current_user()
         sender_email = sender.email()
@@ -103,6 +115,7 @@ class NewLetterHandler(webapp2.RequestHandler):
 
         letter = Letter(text = text, theme = theme, sender_email = sender_email, receiver_email = receiver_email, deliverydate = deliverydate)
         letter.put()
+        logging.info(letter)
         self.redirect("/")
 
 
