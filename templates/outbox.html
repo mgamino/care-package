@@ -10,27 +10,44 @@
   <body>
     <h1>YOUR OUTBOX</h1>
     <p>hi</p>
-    <div class="delivered">
+    <center><div class="delivered">
       {% for letter in deliveredletters %}
         <div class = "message">
           <center>{{letter.receiver_email}}</center>
           <div class = "textbox">
-
-            {{letter.text}}
+            <div class="wrap">
+            	<div class="cube">
+            		<div class="front"><div id="cross"></div></div>
+            		<div class="back"><div id="cross"></div></div>
+            		<div class="top"><div id="cross"></div></div>
+            		<div class="bottom"><div id="cross"></div></div>
+            		<div class="left"><div id="cross"></div></div>
+            		<div class="right"><div id="cross"></div></div>
+            	</div>
+            </div>
           </div>
         </div>
       {% endfor %}
-    </div>
-    <div class="sent">
+    </div></ceneter>
+    <!-- <div class="sent">
       {% for letter in undeliveredletters %}
         <div class = "message">
           <center>Name</center>
           <div class = "textbox">
-            This is text that you typed but they have not recieved
+            <div class="wrap">
+            	<div class="cube">
+            		<div class="front">front</div>
+            		<div class="back">back</div>
+            		<div class="top">top</div>
+            		<div class="bottom">bottom</div>
+            		<div class="left">left</div>
+            		<div class="right">right</div>
+            	</div>
+            </div>
           </div>
         </div>
       {% endfor %}
-    </div>
+    </div> -->
     <a href="/" class="rbutton"> RETURN <br> HOME </a>
   </body>
 </html>
