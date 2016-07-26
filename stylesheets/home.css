@@ -141,6 +141,7 @@ h2 {
     left: 0px;
     font-size: 20px;
     color: black;
+    font-family: 'Lato', sans-serif;
 }
 
 .dropdown-content2 {
@@ -154,4 +155,14 @@ h2 {
     right: 0px;
     font-size: 20px;
     color: black;
+    font-family: 'Lato', sans-serif;
+}
+
+.dropdown-content2 ul {
+  text-align: left;
+}
+
+form {
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
 }
