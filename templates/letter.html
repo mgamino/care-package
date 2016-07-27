@@ -9,7 +9,7 @@
       <link rel="stylesheet" href="stylesheets/classic.css">
     {% elif letter.theme == "bold" %}
       <link rel="stylesheet" href="stylesheets/bold.css">
-    {% elif letter.theme == "neon" %}
+    {% elif letter.theme == "tropical" %}
       <link rel="stylesheet" href="stylesheets/tropical.css">
     {% else %}
       <link rel="stylesheet" href="stylesheets/elegant.css">
@@ -17,6 +17,7 @@
   </head>
   <body>
     <div class="letter">
+      <div class="curl"></div>
       <div class = "message">
         {% if letter.theme == "cute" %}
           <h1>HI THERE</h1>
