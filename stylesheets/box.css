@@ -44,7 +44,7 @@
 	to { transform: rotateY(360deg); }
 }
 .cube{
-	animation: spin 4s infinite linear;
+	animation: spin 6s infinite linear;
 }
 
 
