@@ -11,12 +11,13 @@ h1 {
   background-color: #4CDEF5;
   color: white;
   top: 0px;
+  margin-top: 0%;
 }
 
 h2 {
   font-family: 'Lato', sans-serif;
   font-size: 20px;
-  color: #A5A5AF;
+  color: black;
 }
 
 #googleMap {
@@ -102,7 +103,7 @@ h2 {
 
 .dropdown1 {
     position: absolute;
-    top: 129px;
+    top: 97px;
     left: 8px;
     display: inline-block;
     background-color: #A4D555;
@@ -117,7 +118,7 @@ h2 {
 
 .dropdown2 {
     position: absolute;
-    top: 129px;
+    top: 97px;
     right: 8px;
     display: inline-block;
     background-color: #A4D555;
@@ -169,7 +170,7 @@ form {
 
 #user {
   position: absolute;
-  top: 129px;
+  top: 97px;
   left: 50%;
   transform: translate(-50%);
   display: inline-block;

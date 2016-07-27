@@ -7,22 +7,33 @@ html {
 
 h1 {
   font-family: 'Oswald', sans-serif;
-  font-size: 30px;
+  font-size: 60px;
   color: white;
   background-color: #4CDEF5;
+  margin-top: 0%;
+}
+
+.letter {
+  margin-top: 0%;
+  margin-left: 20%;
+  margin-right: 20%;
+  background-image: url("/images/background3.png");
+  border-color: #4CDEF5;
+  border-width: thick;
+  border-style: solid;
 }
 
 p {
   font-family: 'Lato', sans-serif;
-  font-size: 16px;
+  font-size: 30px;
   color: #192231;
 }
 
 h3 {
   font-family: 'Oswald', sans-serif;
-  font-size: 16px;
+  font-size: 30px;
   color: white;
-  background-color: #A4D555;
+  background-color: #FF5992;
 }
 
 .rbutton {/*Controls button in newletter.html*/
@@ -40,5 +51,4 @@ h3 {
   left: 600px;
   height: 25px;
   margin: auto;
-  position: fixed;
 }

@@ -1,24 +1,54 @@
 html {
   /*Replace html with letter*/
-  background-color: #98878F;
+  background-image: url("/images/background3.png");
   text-align: center;
   /* Background pattern from subtlepatterns.com */
 }
 
+.letter {
+  margin-top: 0%;
+  margin-left: 20%;
+  margin-right: 20%;
+  background-image: url("/images/footer_lodyas.png");
+  border-color: #0F1626;
+  border-width: thick;
+  border-style: solid;
+}
+
 h1 {
-  font-family: 'Raleway';
-  font-size: 30px;
-  color: #494E6B;
+  font-family: 'Fjalla One';
+  font-size: 60px;
+  color: #F5F5F5;
+  margin-top: 0%;
+  background-color: #0F1626;
 }
 
 p {
-  font-family: 'Goudy Bookletter 1911', sans-serif;
-  font-size: 16px;
-  color: #192231;
+  font-family: 'Lato', sans-serif;
+  font-size: 30px;
+  color: white;
 }
 
 h3 {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Lato', sans-serif;
+  font-size: 30px;
+  background-color: #FF533D;
+  color: #F5F5F5;
+}
+
+.rbutton {
+  background-color: #A4D555;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
   font-size: 16px;
-  color: #985E6D;
+  width: 180px;
+  font-family: 'Oswald', sans-serif;
+  bottom: 0;
+  left: 600px;
+  height: 25px;
+  margin: auto;
 }

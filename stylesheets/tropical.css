@@ -9,34 +9,35 @@ html {
   margin-top: 0%;
   margin-left: 20%;
   margin-right: 20%;
-  background-image: url("/images/crossword.png");
-  border-color: #0B3C5D;
+  background-image: url("/images/wov.png");
+    /* Background pattern from subtlepatterns.com */
+  border-color: #1FBF85;
   border-width: thick;
   border-style: solid;
 }
 
 h1 {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Unica One', sans-serif;
   font-size: 60px;
+  background-color: #1FBF85;
   color: #F5F5F5;
-  background-color: #0B3C5D;
   margin-top: 0%;
 }
 
 p {
-  font-family: 'Old Standard TT', sans-serif;
+  font-family: 'Vollkorn', sans-serif;
   font-size: 30px;
-  color: #1D2731;
+  color: black;
 }
 
 h3 {
-  font-family: 'Old Standard TT', sans-serif;
+  font-family: 'Vollkorn', sans-serif;
   font-size: 30px;
   color: #F5F5F5;
-  background-color: #D9B310;
+  background-color: #EAB126;
 }
 
-.rbutton {/*Controls button in newletter.html*/
+.rbutton {
   background-color: #A4D555;
   border: none;
   color: white;

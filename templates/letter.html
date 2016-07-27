@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Letter</title>
-    <link href='https://fonts.googleapis.com/css?family=Oswald|Lato|Pompiere|Buda:300|Raleway|Goudy+Bookletter+1911|Allan|Cardo|Rufina|Signika' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oswald|Lato|Pompiere|Buda:300|Raleway|Old+Standard+TT|Allan|Cardo|Fjalla+One|Unica+One|Vollkorn' rel='stylesheet' type='text/css'>
     {% if letter.theme == "cute" %}
       <link rel="stylesheet" href="stylesheets/cute.css">
     {% elif letter.theme == "classic" %}
@@ -10,7 +10,7 @@
     {% elif letter.theme == "bold" %}
       <link rel="stylesheet" href="stylesheets/bold.css">
     {% elif letter.theme == "neon" %}
-      <link rel="stylesheet" href="stylesheets/neon.css">
+      <link rel="stylesheet" href="stylesheets/tropical.css">
     {% else %}
       <link rel="stylesheet" href="stylesheets/elegant.css">
     {% endif %}
@@ -18,7 +18,17 @@
   <body>
     <div class="letter">
       <div class = "message">
-        <h1>MESSAGE</h1>
+        {% if letter.theme == "cute" %}
+          <h1>HI THERE</h1>
+        {% elif letter.theme == "classic" %}
+          <h1>JUST A NOTE</h1>
+        {% elif letter.theme == "bold" %}
+          <h1>MESSAGE</h1>
+        {% elif letter.theme == "tropical" %}
+          <h1>HELLO</h1>
+        {% else %}
+          <h1>GREETINGS</h1>
+        {% endif %}
           <div class ="text">
             <p>{{letter.text}}</p>
         </div>
@@ -26,7 +36,9 @@
       </div>
       </div>
 
-    <a href="/" class="rbutton"> RETURN HOME </a>
+    <br>
     <a href="/inbox.html" class="rbutton"> INBOX </a>
+    <br>
+    <a href="/" class="rbutton"> RETURN HOME </a>
   </body>
 </html>
