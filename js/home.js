@@ -5,6 +5,14 @@ function initialize() {
     mapTypeId:google.maps.MapTypeId.ROADMAP
   };
   var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+  for (var i = 0; i<60;i+=20){
+      var myCenter =new google.maps.LatLng(37.4825,-122.2364+i);
+      var marker=new google.maps.Marker({
+      position:myCenter,
+      });
+      marker.setMap(map);
+    }
+
 }
 google.maps.event.addDomListener(window, 'load', initialize);
 
