@@ -1,40 +1,40 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My Outbox</title>
+    <title>Your Outbox</title>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js'></script>
     <script src="js/outbox.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Lato|Oswald:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="stylesheets/outbox.css">
-    <link rel="stylesheet" href="stylesheets/box.css">
   </head>
   <body>
     <h1>YOUR OUTBOX</h1>
-      <div class="delivered">
-      {% for letter in deliveredletters %}
-        <div class = "message">
-          <center>{{letter.receiver_email}}</center>
-            <div class = "textbox">
-              <div class="wrap">
-                <center>
-                	<div class="cube">
-                		<div class="front"><div id="cross"></div></div>
-                		<div class="back"><div id="cross"></div></div>
-                		<div class="top"><div id="cross"></div></div>
-                		<div class="bottom"><div id="cross"></div></div>
-                		<div class="left"><div id="cross"></div></div>
-                		<div class="right"><div id="cross"></div></div>
-                	</div>
-                </center>
-              </div>
-            </div>
-          </div>
-        </div>
+    
+      <div class="sent">
+        <table style="width:100%">
+          <tr>
+            <th>RECIPIENT</th>
+            <th>SEND DATE</th>
+          </tr>
+          {% for letter in deliveredletters %}
+          <tr>
+            <td>{{letter.receiver_email}}</td>
+            <td>{{letter.deliverydate}}</td>
+          </tr>
+          {% endfor %}
+        </table>
       </div>
-    {% endfor %}
-  </div>
 
-  <!-- <div class="sent">
+      <!-- <div class="sent">
+        <div class = "tobar" id = "to">RECIPIENT</div>
+        <div class = "sentbar" id = "sent">DATE SENT</div>
+        {% for letter in deliveredletters %}
+          <div class = "to" id = "to">{{letter.receiver_email}}</div>
+          <div class="sent" id = "sent">{{letter.deliverydate}}</div>
+        {% endfor %}
+      </div> -->
+
+  <!-- <div class="recieved">
       {% for letter in undeliveredletters %}
         <div class = "message">
           <center>Name</center>
@@ -55,7 +55,6 @@
     </div> -->
 
     <a href="/" class="rbutton"> RETURN HOME </a>
-    <div><a href="/" class="rbutton"> RETURN HOME </a></div>
 
   </body>
 </html>

@@ -170,7 +170,8 @@ form {
 #user {
   position: absolute;
   top: 129px;
-  left: 470px;
+  left: 50%;
+  transform: translate(-50%);
   display: inline-block;
   background-color: #A4D555;
   font-size: 20px;

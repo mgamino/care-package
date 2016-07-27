@@ -1,7 +1,7 @@
 html {
-  text-align: center;
   background-image: url("/images/background3.png");
   /* Background pattern from subtlepatterns.com */
+  text-align: center;
 }
 
 h1 {
@@ -11,18 +11,31 @@ h1 {
   color: white;
 }
 
-.message{
-  font-family: 'Oswald', sans-serif;
-  font-size: 20px;
-  margin: 50px;
-  /*color: white;
-  width: 180px;
-  height: 30px;
-  background-color: #57BC90;*/
-  height: 200px;
-  width: 200px;
+table {
+  text-align: center;
+  align-items: center;
+  margin: auto;
 }
 
+th {
+  font-family: 'Oswald', sans-serif;
+  font-size: 30px;
+  background-color: #841983;
+  color: white;
+}
+
+td {
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  color: black;
+}
+
+#to{
+  width:30%;
+}
+#sent{
+  width:70%
+}
 
 .rbutton{
   background-color: #A4D555;
@@ -38,5 +51,5 @@ h1 {
   bottom: 0;
   left: 600px;
   margin: auto;
-  position: absolute;
+  position: fixed;
 }
