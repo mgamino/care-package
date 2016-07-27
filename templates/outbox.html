@@ -9,7 +9,7 @@
   </head>
   <body>
     <h1>YOUR OUTBOX</h1>
-      <div class="delivered">
+      <div class="sent">
         <div class = "bar" id = "to">To:</div>
         <div class = "bar" id = "sent"><center>Date Sent</center></p></div>
         {% for letter in deliveredletters %}
@@ -18,7 +18,7 @@
         {% endfor %}
       </div>
 
-  <!-- <div class="sent">
+  <!-- <div class="recieved">
       {% for letter in undeliveredletters %}
         <div class = "message">
           <center>Name</center>
