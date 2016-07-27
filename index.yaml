@@ -18,12 +18,6 @@ indexes:
 
 - kind: Letter
   properties:
-  - name: receiver_email
-  - name: deliverydate
-  - name: writtendate
-
-- kind: Letter
-  properties:
   - name: sender_email
   - name: deliverydate
   - name: writtendate
