@@ -6,33 +6,17 @@
     <script src="js/outbox.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Lato|Oswald:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="stylesheets/outbox.css">
-    <link rel="stylesheet" href="stylesheets/box.css">
   </head>
   <body>
     <h1>YOUR OUTBOX</h1>
       <div class="delivered">
-      {% for letter in deliveredletters %}
-        <div class = "message">
-          <center>{{letter.receiver_email}}</center>
-            <div class = "textbox">
-              <div class="wrap">
-                <center>
-                	<div class="cube">
-                		<div class="front"><div id="cross"></div></div>
-                		<div class="back"><div id="cross"></div></div>
-                		<div class="top"><div id="cross"></div></div>
-                		<div class="bottom"><div id="cross"></div></div>
-                		<div class="left"><div id="cross"></div></div>
-                		<div class="right"><div id="cross"></div></div>
-                	</div>
-                </center>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class = "bar" id = "to">To:</div>
+        <div class = "bar" id = "sent"><center>Date Sent</center></p></div>
+        {% for letter in deliveredletters %}
+          <div class = "bar" id = "to">{{letter.receiver_email}}</div>
+          <div class="bar" id = "sent"><center>{{letter.deliverydate}}</center></div>
+        {% endfor %}
       </div>
-    {% endfor %}
-  </div>
 
   <!-- <div class="sent">
       {% for letter in undeliveredletters %}
@@ -55,7 +39,6 @@
     </div> -->
 
     <a href="/" class="rbutton"> RETURN HOME </a>
-    <div><a href="/" class="rbutton"> RETURN HOME </a></div>
 
   </body>
 </html>

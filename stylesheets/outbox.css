@@ -1,5 +1,4 @@
 html {
-  text-align: center;
   background-image: url("/images/background3.png");
   /* Background pattern from subtlepatterns.com */
 }
@@ -10,19 +9,17 @@ h1 {
   background-color: #4CDEF5;
   color: white;
 }
-
-.message{
+.bar{
+  float:left;
   font-family: 'Oswald', sans-serif;
   font-size: 20px;
-  margin: 50px;
-  /*color: white;
-  width: 180px;
-  height: 30px;
-  background-color: #57BC90;*/
-  height: 200px;
-  width: 200px;
 }
-
+#to{
+  width:30%;
+}
+#sent{
+  width:70%
+}
 
 .rbutton{
   background-color: #A4D555;
@@ -38,5 +35,5 @@ h1 {
   bottom: 0;
   left: 600px;
   margin: auto;
-  position: absolute;
+  position: fixed;
 }
