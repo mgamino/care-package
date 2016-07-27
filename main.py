@@ -75,8 +75,8 @@ class OutboxHandler(webapp2.RequestHandler):
 
 
         logging.info(dir(Letter.deliverydate))
-        undeliveredletters = Letter.query(Letter.sender_email == email, Letter.deliverydate > present).order()fetch()
-        deliveredletters = Letter.query(Letter.sender_email == email, Letter.deliverydate <= present).fetch()
+        undeliveredletters = Letter.query(Letter.sender_email == email, Letter.deliverydate > present).order(Letter.deliverydate).fetch()
+        deliveredletters = Letter.query(Letter.sender_email == email, Letter.deliverydate <= present).order(Letter.deliverydate).fetch()
 
 
         template_vals = {'undeliveredletters':undeliveredletters, 'deliveredletters':deliveredletters}
