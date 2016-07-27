@@ -75,7 +75,7 @@ class OutboxHandler(webapp2.RequestHandler):
 
 
         logging.info(dir(Letter.deliverydate))
-        undeliveredletters = Letter.query(Letter.sender_email == email, Letter.deliverydate > present).fetch()
+        undeliveredletters = Letter.query(Letter.sender_email == email, Letter.deliverydate > present).order()fetch()
         deliveredletters = Letter.query(Letter.sender_email == email, Letter.deliverydate <= present).fetch()
 
 
@@ -115,7 +115,6 @@ class NewLetterHandler(webapp2.RequestHandler):
 
         letter = Letter(text = text, theme = theme, sender_email = sender_email, receiver_email = receiver_email, deliverydate = deliverydate)
         letter.put()
-        logging.info(letter)
         self.redirect("/")
 
 
