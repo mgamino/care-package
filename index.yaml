@@ -12,5 +12,10 @@ indexes:
 
 - kind: Letter
   properties:
+  - name: receiver_email
+  - name: deliverydate
+
+- kind: Letter
+  properties:
   - name: sender_email
   - name: deliverydate
