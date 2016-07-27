@@ -7,8 +7,10 @@ function initialize() {
   var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
   for (var i = 0; i<60;i+=20){
       var myCenter =new google.maps.LatLng(37.4825,-122.2364+i);
+      var image = 'images/gift-24.png'
       var marker=new google.maps.Marker({
       position:myCenter,
+      icon: image
       });
       marker.setMap(map);
     }
