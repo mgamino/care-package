@@ -22,7 +22,7 @@ class Letter(ndb.Model):
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        
+
         user = users.get_current_user()
 
         if user:
@@ -42,6 +42,7 @@ class MainHandler(webapp2.RequestHandler):
             self.response.write(template.render())
 
 
+
 class InboxHandler(webapp2.RequestHandler):
     def get(self):
 
@@ -52,7 +53,7 @@ class InboxHandler(webapp2.RequestHandler):
         present = datetime.date.today()
 
 
-        letters = Letter.query(Letter.receiver_email == email, Letter.deliverydate <= present).order(Letter.writtendate).fetch()
+        letters = Letter.query(Letter.receiver_email == email, Letter.deliverydate <= present).order(Letter.deliverydate).order(Letter.writtendate).fetch()
 
 
         template_vals = {'letters':letters}
@@ -79,8 +80,8 @@ class OutboxHandler(webapp2.RequestHandler):
 
 
         logging.info(dir(Letter.deliverydate))
-        undeliveredletters = Letter.query(Letter.sender_email == email, Letter.deliverydate > present).order(Letter.writtendate).fetch()
-        deliveredletters = Letter.query(Letter.sender_email == email, Letter.deliverydate <= present).order(Letter.writtendate).fetch()
+        undeliveredletters = Letter.query(Letter.sender_email == email, Letter.deliverydate > present).order(Letter.deliverydate).order(Letter.writtendate).fetch()
+        deliveredletters = Letter.query(Letter.sender_email == email, Letter.deliverydate <= present).order(Letter.deliverydate).order(Letter.writtendate).fetch()
 
 
         template_vals = {'undeliveredletters':undeliveredletters, 'deliveredletters':deliveredletters}
@@ -144,6 +145,7 @@ class AboutHandler(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
+    ('/home.html', MainHandler),
     ('/inbox.html', InboxHandler),
     ('/outbox.html', OutboxHandler),
     ('/newletter.html', NewLetterHandler),
