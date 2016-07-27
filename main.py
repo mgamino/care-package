@@ -24,7 +24,7 @@ class MainHandler(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
 
-        email = user.email()
+        email = user.email().lower()
 
 
         if user:
@@ -46,7 +46,7 @@ class InboxHandler(webapp2.RequestHandler):
 
         template = jinja_environment.get_template("inbox.html")
         user = users.get_current_user()
-        email = user.email()
+        email = user.email().lower()
 
         present = datetime.date.today()
 
@@ -64,7 +64,7 @@ class OutboxHandler(webapp2.RequestHandler):
 
         template = jinja_environment.get_template("outbox.html")
         user = users.get_current_user()
-        email = user.email()
+        email = user.email().lower()
         # year = int(time.strftime("%Y"))
         # month = int(time.strftime("%m"))
         # day = int(time.strftime("%d"))
@@ -95,7 +95,7 @@ class NewLetterHandler(webapp2.RequestHandler):
         self.response.write(template.render())
     #   self.response.write(template.render(template_vals))
     def post(self):
-        receiver_email = self.request.get('receiver')
+        receiver_email = self.request.get('receiver').lower()
         text = self.request.get('text')
         theme = self.request.get('theme')
         datetemp = self.request.get('deliverydate')
@@ -112,7 +112,7 @@ class NewLetterHandler(webapp2.RequestHandler):
         deliverydate = date(year, month, day)
 
         sender = users.get_current_user()
-        sender_email = sender.email()
+        sender_email = sender.email().lower()
 
         receiver = "testing"
 
