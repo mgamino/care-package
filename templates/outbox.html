@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My Outbox</title>
+    <title>Your Outbox</title>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js'></script>
     <script src="js/outbox.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Lato|Oswald:400,700' rel='stylesheet' type='text/css'>
@@ -9,14 +9,30 @@
   </head>
   <body>
     <h1>YOUR OUTBOX</h1>
+    
       <div class="sent">
-        <div class = "bar" id = "to">To:</div>
-        <div class = "bar" id = "sent"><center>Date Sent</center></p></div>
-        {% for letter in deliveredletters %}
-          <div class = "bar" id = "to">{{letter.receiver_email}}</div>
-          <div class="bar" id = "sent"><center>{{letter.deliverydate}}</center></div>
-        {% endfor %}
+        <table style="width:100%">
+          <tr>
+            <th>RECIPIENT</th>
+            <th>SEND DATE</th>
+          </tr>
+          {% for letter in deliveredletters %}
+          <tr>
+            <td>{{letter.receiver_email}}</td>
+            <td>{{letter.deliverydate}}</td>
+          </tr>
+          {% endfor %}
+        </table>
       </div>
+
+      <!-- <div class="sent">
+        <div class = "tobar" id = "to">RECIPIENT</div>
+        <div class = "sentbar" id = "sent">DATE SENT</div>
+        {% for letter in deliveredletters %}
+          <div class = "to" id = "to">{{letter.receiver_email}}</div>
+          <div class="sent" id = "sent">{{letter.deliverydate}}</div>
+        {% endfor %}
+      </div> -->
 
   <!-- <div class="recieved">
       {% for letter in undeliveredletters %}
