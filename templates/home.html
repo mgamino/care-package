@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="stylesheets/home.css">
     <link href='https://fonts.googleapis.com/css?family=Lato|Oswald:400,700' rel='stylesheet' type='text/css'>
   </head>
-  <body>
+  <body onload="initialize()">
     <h1>C@RE PACKAGE</h1>
 
     <div class="dropdown1">
@@ -59,8 +59,13 @@
     </div>
 
     <h2>Send letters to <em>any</em> friend, <em>any</em>time, <em>any</em>where!</h2>
-    <div id="googleMap" style="width:500px;height:380px;"></div>
     <p id="user">Hello, {{email}}!</p>
+    <br>
+    <div id="map" style="width: 500px; height: 480px;"></div>
+    <div>
+      <input id="address" type="textbox" value="Sydney, NSW">
+      <input type="button" value="Encode" onclick="codeAddress()">
+    </div>
     <br>
     <a href="/inbox.html" class="button"> INBOX </a>
     <a href="/outbox.html" class="button"> OUTBOX </a>

@@ -183,3 +183,8 @@ form {
   height: 30px;
   vertical-align: middle;
 }
+
+#map {
+  margin-left: auto;
+  margin-right: auto;
+}
