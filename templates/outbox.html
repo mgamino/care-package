@@ -14,16 +14,39 @@
         <table style="width:100%">
           <tr>
             <th>RECIPIENT</th>
-            <th>RECEIVE DATE</th>
+            <th>DATE WRITTEN </th>
+            <th>DATE DELIVERED</th>
           </tr>
           {% for letter in deliveredletters %}
           <tr>
             <td>{{letter.receiver_email}}</td>
-            <td>{{letter.deliverydate}}</td>
+            <td> {{letter.writtendate.strftime("%B %d, %Y")}} </td>
+            <td>{{letter.deliverydate.strftime("%B %d, %Y")}}</td>
           </tr>
           {% endfor %}
         </table>
       </div>
+
+      <br>
+
+      <br>
+
+       <div class="sent">
+            <table style="width:100%">
+              <tr>
+                <th>RECIPIENT</th>
+                <th>DATE WRITTEN</th>
+                <th>WILL BE DELIVERED ON</th>
+              </tr>
+              {% for letter in undeliveredletters %}
+              <tr>
+                <td>{{letter.receiver_email}}</td>
+                <td> {{letter.writtendate.strftime("%B %d, %Y")}} </td>
+                <td>{{letter.deliverydate.strftime("%B %d, %Y")}}</td>
+              </tr>
+              {% endfor %}
+            </table>
+          </div>
 
       <!-- <div class="sent">
         <div class = "tobar" id = "to">RECIPIENT</div>

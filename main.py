@@ -18,16 +18,15 @@ class Letter(ndb.Model):
     deliverydate = ndb.DateProperty()
     sender_email = ndb.StringProperty()
     receiver_email = ndb.StringProperty()
-
+    writtendate = ndb.DateTimeProperty(auto_now_add = True)
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
+        
         user = users.get_current_user()
 
-        email = user.email().lower()
-
-
         if user:
+            email = user.email().lower()
             logout_url=users.CreateLogoutURL('/')
 
 
@@ -39,7 +38,9 @@ class MainHandler(webapp2.RequestHandler):
 
         else:
             login_url = users.CreateLoginURL('/')
-            self.response.write('Logging Out')
+            template = jinja_environment.get_template("login.html")
+            self.response.write(template.render())
+
 
 class InboxHandler(webapp2.RequestHandler):
     def get(self):
@@ -51,7 +52,7 @@ class InboxHandler(webapp2.RequestHandler):
         present = datetime.date.today()
 
 
-        letters = Letter.query(Letter.receiver_email == email, Letter.deliverydate <= present).fetch()
+        letters = Letter.query(Letter.receiver_email == email, Letter.deliverydate <= present).order(Letter.writtendate).fetch()
 
 
         template_vals = {'letters':letters}
@@ -78,8 +79,8 @@ class OutboxHandler(webapp2.RequestHandler):
 
 
         logging.info(dir(Letter.deliverydate))
-        undeliveredletters = Letter.query(Letter.sender_email == email, Letter.deliverydate > present).order(Letter.deliverydate).fetch()
-        deliveredletters = Letter.query(Letter.sender_email == email, Letter.deliverydate <= present).order(Letter.deliverydate).fetch()
+        undeliveredletters = Letter.query(Letter.sender_email == email, Letter.deliverydate > present).order(Letter.writtendate).fetch()
+        deliveredletters = Letter.query(Letter.sender_email == email, Letter.deliverydate <= present).order(Letter.writtendate).fetch()
 
 
         template_vals = {'undeliveredletters':undeliveredletters, 'deliveredletters':deliveredletters}
@@ -99,17 +100,15 @@ class NewLetterHandler(webapp2.RequestHandler):
         text = self.request.get('text')
         theme = self.request.get('theme')
         datetemp = self.request.get('deliverydate')
-        dates = datetemp.split('-')
-        year = int(dates[0])
-        month = int(dates[1])
-        day = int(dates[2])
 
-        logging.info(year)
-        logging.info(type(year))
-        logging.info(month)
-        logging.info(day)
-
-        deliverydate = date(year, month, day)
+        if datetemp == "":
+            deliverydate = datetime.date.today()
+        else:
+            dates = datetemp.split('-')
+            year = int(dates[0])
+            month = int(dates[1])
+            day = int(dates[2])
+            deliverydate = date(year, month, day)
 
         sender = users.get_current_user()
         sender_email = sender.email().lower()
@@ -119,8 +118,6 @@ class NewLetterHandler(webapp2.RequestHandler):
         letter = Letter(text = text, theme = theme, sender_email = sender_email, receiver_email = receiver_email, deliverydate = deliverydate)
         letter.put()
         self.redirect("/")
-
-
 
 class LetterHandler(webapp2.RequestHandler):
     def get(self):
