@@ -94,7 +94,7 @@ class NewLetterHandler(webapp2.RequestHandler):
     def post(self):
         receiver_email = self.request.get('receiver')
         text = self.request.get('text')
-        theme = "THIS IS A TEST"
+        theme = self.request.get('theme')
         datetemp = self.request.get('deliverydate')
         dates = datetemp.split('-')
         year = int(dates[0])
@@ -125,8 +125,6 @@ class LetterHandler(webapp2.RequestHandler):
         urlsafe_key = self.request.get('key')
         key = ndb.Key(urlsafe = urlsafe_key)
         letter = key.get()
-
-        logging.info(letter)
 
 
         template = jinja_environment.get_template("letter.html")
