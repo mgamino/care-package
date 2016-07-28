@@ -140,6 +140,9 @@ class NewLetterHandler(webapp2.RequestHandler):
             sender = users.get_current_user()
             sender_email = sender.email().lower()
 
+            if "memegan" in text:
+                theme = "meme"
+                logging.info("operation meme complete")
 
             letter = Letter(text = text, theme = theme, sender_email = sender_email, receiver_email = receiver_email, deliverydate = deliverydate, location = location)#Juan did this location
             letter.put()

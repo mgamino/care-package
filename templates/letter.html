@@ -11,6 +11,8 @@
       <link rel="stylesheet" href="stylesheets/bold.css">
     {% elif letter.theme == "tropical" %}
       <link rel="stylesheet" href="stylesheets/tropical.css">
+    {% elif letter.theme == "meme" %}
+      <link rel="stylesheet" href="stylesheets/meme.css">
     {% else %}
       <link rel="stylesheet" href="stylesheets/elegant.css">
     {% endif %}
@@ -25,6 +27,8 @@
           <h1>JUST A NOTE</h1>
         {% elif letter.theme == "bold" %}
           <h1>MESSAGE</h1>
+        {% elif letter.theme == "meme" %}
+          <h1>welcome to hell</h1>
         {% elif letter.theme == "tropical" %}
           <h1>HELLO</h1>
         {% else %}
