@@ -60,7 +60,7 @@ class InboxHandler(webapp2.RequestHandler):
 
 
         letterss = Letter.query(Letter.receiver_email == email).order(Letter.writtendate).fetch()
-        letters = letters.query(Letter.deliverydate <= present).order(Letter.deliverydate).fetch()
+        letters = letterss.query(letterss.deliverydate <= present).order(letterss.deliverydate).fetch()#juan did this
 
         template_vals = {'letters':letters}
 
