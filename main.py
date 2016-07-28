@@ -62,7 +62,7 @@ class InboxHandler(webapp2.RequestHandler):
         present = datetime.date.today()
 
 
-        letters = Letter.query(Letter.deliverydate <= present,Letter.receiver_email == email).order(Letter.deliverydate).order(Letter.writtendate).fetch()#juan swithced filters.That was alll!!!!
+        letters = Letter.query(Letter.deliverydate <= present,Letter.receiver_email == email).order(-Letter.deliverydate).order(-Letter.writtendate).fetch()#juan swithced filters.That was alll!!!!
 
         template_vals = {'letters':letters}
 
