@@ -13,11 +13,11 @@
     <div class="recieved">
       {% for letter in letters %}
           <div id = "message" class = "message"> <a href="/letter?key={{letter.key.urlsafe()}}">
-          <form method="post" action="/delete?key={{letter.key.urlsafe()}}">
-            <input type="submit" value="X" id="btn">
-          </form>
           <div class ="from">{{letter.sender_email}}</div>
           <div class = "recdate">{{letter.deliverydate.strftime("%B %d, %Y")}}</div>
+          <form method="post" action="/delete?key={{letter.key.urlsafe()}}">
+            <input type="submit" value="DELETE" id="btn">
+          </form>
               <div class = "textbox">
                 <div class="wrap">
                   <center>

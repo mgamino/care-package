@@ -94,16 +94,16 @@ h3 {
 }
 
 #btn {
-  background-color: #57BC90;
+  background-color: #FF5992;
   border: none;
   color: white;
   text-align: center;
   text-decoration: none;
   display: block;
-  font-size: 12px;
-  width: auto;
-  height: auto;
+  font-size: 20px;
+  width: 430px;
+  height: 30px;
   vertical-align: middle;
   margin: auto;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Oswald', sans-serif;
 }
