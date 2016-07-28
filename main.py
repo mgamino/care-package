@@ -61,7 +61,7 @@ class InboxHandler(webapp2.RequestHandler):
 
         # letters = Letter.query(Letter.receiver_email == email, Letter.deliverydate <= present).order(Letter.deliverydate).order(Letter.writtendate).fetch()
 
-        letters = Letter.query().filter('Letter.receiver_email ==', "email").filter('Letter.deliverydate <=', 'present').order(Letter.deliverydate).order(Letter.writtendate).fetch()#juan did this
+        letters = Letter.query().filter(ndb.GenericProperty('receiver_email') == "email").filter(ndb.GenericProperty('deliverydate') <= 'present').order(Letter.deliverydate).order(Letter.writtendate).fetch()#juan did this
 
 
         template_vals = {'letters':letters}
