@@ -36,7 +36,6 @@ var geocoder;
 var map;
 
 function initialize() {
-
   geocoder = new google.maps.Geocoder();
   var latlng = new google.maps.LatLng(38.0000,-97.0000);
   var mapOptions = {
@@ -44,10 +43,13 @@ function initialize() {
     center: latlng
   }
   map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  codeAddress();
 }
 
-function codeAddress(local) {
-  for (address in local){
+function codeAddress() {
+  for (index in local){
+    address = local[index]
+    console.log(address)
     geocoder.geocode( { 'address': address},
       function(results, status) {
         if (status == 'OK') {
