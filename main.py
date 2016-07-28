@@ -113,21 +113,37 @@ class NewLetterHandler(webapp2.RequestHandler):
 
         if datetemp == "":
             deliverydate = datetime.date.today()
+
+        if (receiver_email == "") or ("@" not in receiver_email):
+            template = jinja_environment.get_template("oops.html")
+            template_vals = {'email':receiver_email, 'text':text, 'datetemp':datetemp, 'location':location}
+
+            self.response.write(template.render(template_vals))
+
+        elif (location == ""):
+            template = jinja_environment.get_template("oops.html")
+            template_vals = {'email':receiver_email, 'text':text, 'datetemp':datetemp, 'location':location}
+
+            self.response.write(template.render(template_vals))
+
         else:
-            dates = datetemp.split('-')
-            year = int(dates[0])
-            month = int(dates[1])
-            day = int(dates[2])
-            deliverydate = date(year, month, day)
 
-        sender = users.get_current_user()
-        sender_email = sender.email().lower()
+            if datetemp == "":
+                deliverydate = datetime.date.today()
+            else:
+                dates = datetemp.split('-')
+                year = int(dates[0])
+                month = int(dates[1])
+                day = int(dates[2])
+                deliverydate = date(year, month, day)
 
-        receiver = "testing"
+            sender = users.get_current_user()
+            sender_email = sender.email().lower()
 
-        letter = Letter(text = text, theme = theme, sender_email = sender_email, receiver_email = receiver_email, deliverydate = deliverydate, location = location)#Juan did this location
-        letter.put()
-        self.redirect("/sent")
+
+            letter = Letter(text = text, theme = theme, sender_email = sender_email, receiver_email = receiver_email, deliverydate = deliverydate, location = location)#Juan did this location
+            letter.put()
+            self.redirect("/sent")
 
 class SentHandler(webapp2.RequestHandler):
     def get(self):
@@ -135,6 +151,14 @@ class SentHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template("sent.html")
 
         self.response.write(template.render())
+
+class OopsHandler(webapp2.RequestHandler):
+    def get(self):
+
+        template = jinja_environment.get_template("oops.html")
+
+        self.response.write(template.render())
+
 
 
 
@@ -182,5 +206,6 @@ app = webapp2.WSGIApplication([
     ('/letter', LetterHandler),
     ('/about.html', AboutHandler),
     ('/sent', SentHandler),
+    ('/oops', OopsHandler),
     ('/delete', DeleteHandler)
 ], debug=True)
