@@ -33,6 +33,8 @@ class MainHandler(webapp2.RequestHandler):
             email = user.email().lower()
             logout_url=users.CreateLogoutURL('/')
 
+            Letter.query(Letter.sender_email == email).fetch()#juan did this
+
 
             template = jinja_environment.get_template("home.html")
             template_vals = {'email':email, 'logout_url':logout_url}
