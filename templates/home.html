@@ -7,7 +7,22 @@
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2F3hvciau43w3OEzoRaXTbg9kWiHORlw&callback=initialize"type="text/javascript"></script>
     <link rel="stylesheet" href="stylesheets/home.css">
     <link href='https://fonts.googleapis.com/css?family=Lato|Oswald:400,700' rel='stylesheet' type='text/css'>
-  <body onload="initialize()">
+    <script>
+
+      $("body").ready(
+        function(){
+          var local =[]
+          {% for l in local%}
+            local.push("{{l}}")
+          {%endfor%}
+          console.log(local)
+          initialize()
+        }
+      );
+    </script>
+  </head>
+  <body>
+
     <h1>C@RE PACKAGE</h1>
 
     <div class="dropdown1">
