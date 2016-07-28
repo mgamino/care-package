@@ -12,7 +12,7 @@ function setup(){
   $(".wrap").mouseleave(
     function(){
       $(this).find(".cube").stop().css({
-      	"animation": "spin 4s infinite linear"
+      	"animation": "spin 6s infinite linear"
       });
       $(this).find(".top").stop().css({
       	"transform": "rotateX(-90deg) translateY(-52px) translateZ(0px) "
@@ -20,3 +20,4 @@ function setup(){
     }
   );
 }
+$(document).ready(setup);
