@@ -32,6 +32,7 @@ $(document).ready(setup);
 //   var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
 // }
 
+// var location = $("div").data("location");
 var geocoder;
 var map;
 function initialize() {
@@ -45,16 +46,17 @@ function initialize() {
 }
 
 function codeAddress() {
-  var address = document.getElementById('address').value;
-  geocoder.geocode( { 'address': address}, function(results, status) {
-    if (status == 'OK') {
-      map.setCenter(results[0].geometry.location);
-      var marker = new google.maps.Marker({
-          map: map,
-          position: results[0].geometry.location
-      });
-    } else {
-      alert('Geocode was not successful for the following reason: ' + status);
-    }
+  var address = document.getElementById('address').value;//address is the location of value
+  geocoder.geocode( { 'address': address},
+    function(results, status) {
+      if (status == 'OK') {
+        map.setCenter(results[0].geometry.location);
+        var marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location
+        });
+      } else {
+        alert('Geocode was not successful for the following reason: ' + status);
+      }
   });
 }

@@ -15,6 +15,7 @@ jinja_environment = jinja2.Environment(
 class Letter(ndb.Model):
     text = ndb.TextProperty()
     theme = ndb.StringProperty()
+    location = ndb.StringProperty()#Juan Did this
     deliverydate = ndb.DateProperty()
     sender_email = ndb.StringProperty()
     receiver_email = ndb.StringProperty()
@@ -22,7 +23,10 @@ class Letter(ndb.Model):
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-
+        #get location string from Letter
+        #need to render the html file
+        #put swiggly lines in html to place location value#in meta tag
+        #
         user = users.get_current_user()
 
         if user:
@@ -101,6 +105,7 @@ class NewLetterHandler(webapp2.RequestHandler):
         text = self.request.get('text')
         theme = self.request.get('theme')
         datetemp = self.request.get('deliverydate')
+        location = self.request.get('locate')#Juan Did this
 
         if datetemp == "":
             deliverydate = datetime.date.today()
@@ -116,7 +121,7 @@ class NewLetterHandler(webapp2.RequestHandler):
 
         receiver = "testing"
 
-        letter = Letter(text = text, theme = theme, sender_email = sender_email, receiver_email = receiver_email, deliverydate = deliverydate)
+        letter = Letter(text = text, theme = theme, sender_email = sender_email, receiver_email = receiver_email, deliverydate = deliverydate, location = location)#Juan did this location
         letter.put()
         self.redirect("/")
 

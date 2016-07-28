@@ -7,7 +7,6 @@
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2F3hvciau43w3OEzoRaXTbg9kWiHORlw&callback=initialize"type="text/javascript"></script>
     <link rel="stylesheet" href="stylesheets/home.css">
     <link href='https://fonts.googleapis.com/css?family=Lato|Oswald:400,700' rel='stylesheet' type='text/css'>
-  </head>
   <body onload="initialize()">
     <h1>C@RE PACKAGE</h1>
 
@@ -61,6 +60,9 @@
     <p id="user">Hello, {{email}}!</p>
     <h2>Send letters to <em>any</em> friend, <em>any</em>time, <em>any</em>where!</h2>
     <div id="map" style="width: 500px; height: 380px;"></div>
+
+    <!-- <div data-location = "{{location}}"></div> Place holder for data -->
+
     <div>
       <input id="address" type="textbox" value="Mountain View, CA">
       <input type="button" value="Let's Go!" onclick="codeAddress()">
