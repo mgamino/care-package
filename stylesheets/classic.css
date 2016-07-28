@@ -1,7 +1,7 @@
 html {
   /*Replace html with letter*/
   text-align: center;
-  background-image: url("/images/background3.png");
+  background-image: url("/images/background.png");
   /* Background pattern from subtlepatterns.com */
 }
 
@@ -17,7 +17,7 @@ h1 {
   margin-top: 0%;
   margin-left: 20%;
   margin-right: 20%;
-  background-image: url("/images/background3.png");
+  background-image: url("/images/background.png");
   border-color: #4CDEF5;
   border-width: thick;
   border-style: solid;

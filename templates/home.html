@@ -9,17 +9,11 @@
     <link href='https://fonts.googleapis.com/css?family=Lato|Oswald:400,700' rel='stylesheet' type='text/css'>
     <script>
 
-      $("body").ready(
-        function(){
-          var local =[]
-          {% for l in local%}
-            local.push("{{l}}")
-          {%endfor%}
-          console.log(local)
-          initialize()
-          codeAddress(local)
-        }
-      );
+      var local = []
+      {% for l in local%}
+        local.push("{{l}}")
+      {%endfor%}
+      console.log(local)
     </script>
   </head>
   <body>

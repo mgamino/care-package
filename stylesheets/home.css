@@ -21,6 +21,15 @@ h2 {
   vertical-align: middle;
 }
 
+h3 {
+  font-family: 'Lato', sans-serif;
+  font-size: 40px;
+  color: black;
+  vertical-align: middle;
+  margin-top: 15%;
+  margin-bottom: 0%;
+}
+
 #googleMap {
   margin: auto;
 }
@@ -219,9 +228,8 @@ form {
   font-size: 30px;
   width: 280px;
   font-family: 'Oswald', sans-serif;
-  transition-duration: 0.4s;
   margin-left: 50%;
   margin-right: 50%;
   margin: auto;
-  margin-top: 200px;
+  margin-top: 5%;
 }
