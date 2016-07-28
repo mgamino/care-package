@@ -12,8 +12,8 @@
     <section><h1>MY INBOX</h1></section>
     <div class="recieved">
       {% for letter in letters %}
-          <div class = "message"> <a href="/letter?key={{letter.key.urlsafe()}}">
-            <button id="delete" class="deleteMe" onclick="removeMessage()">X</button><div class ="from">{{letter.sender_email}}</div>
+          <div id = "message" class = "message"> <a href="/letter?key={{letter.key.urlsafe()}}">
+          <div class ="from">{{letter.sender_email}}</div>
               <div class = "textbox">
                 <div class="wrap">
                   <center>
