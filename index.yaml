@@ -29,6 +29,14 @@ indexes:
 - kind: Letter
   properties:
   - name: receiver_email
+  - name: deliverydate
+    direction: desc
+  - name: writtendate
+    direction: desc
+
+- kind: Letter
+  properties:
+  - name: receiver_email
   - name: writtendate
 
 - kind: Letter

@@ -1,0 +1,54 @@
+html {
+  /*Replace html with letter*/
+  text-align: center;
+  background-image: url("/images/background.png");
+  /* Background pattern from subtlepatterns.com */
+}
+
+h1 {
+  font-family: "Comic Sans MS";
+  font-size: 60px;
+  color: black;
+  background-color: #57873D;
+  margin-top: 0%;
+}
+
+.letter {
+  margin-top: 0%;
+  margin-left: 20%;
+  margin-right: 20%;
+  background-image: url("/images/pepe.png");
+  border-color: #57873D;
+  border-width: thick;
+  border-style: solid;
+}
+
+p {
+  font-family: "Comic Sans MS";
+  font-size: 30px;
+  color: #A45E2A;
+}
+
+h3 {
+  font-family: 'Comic Sans MS';
+  font-size: 30px;
+  color: white;
+  background-color: #2C2DEA;
+}
+
+.rbutton {/*Controls button in newletter.html*/
+  background-color: #FDCFD1;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  width: 180px;
+  font-family: "Comic Sans MS";
+  bottom: 0;
+  left: 600px;
+  height: 25px;
+  margin: auto;
+}
