@@ -7,6 +7,7 @@ import time
 import datetime
 from datetime import date
 import logging
+import time
 
 template_dir = os.path.join(os.path.dirname(__file__), 'templates')
 jinja_environment = jinja2.Environment(
@@ -126,7 +127,16 @@ class NewLetterHandler(webapp2.RequestHandler):
 
         letter = Letter(text = text, theme = theme, sender_email = sender_email, receiver_email = receiver_email, deliverydate = deliverydate, location = location)#Juan did this location
         letter.put()
-        self.redirect("/")
+        self.redirect("/sent")
+
+class SentHandler(webapp2.RequestHandler):
+    def get(self):
+
+        template = jinja_environment.get_template("sent.html")
+
+        self.response.write(template.render())
+
+
 
 class LetterHandler(webapp2.RequestHandler):
     def get(self):
@@ -171,5 +181,6 @@ app = webapp2.WSGIApplication([
     ('/newletter.html', NewLetterHandler),
     ('/letter', LetterHandler),
     ('/about.html', AboutHandler),
+    ('/sent', SentHandler),
     ('/delete', DeleteHandler)
 ], debug=True)
