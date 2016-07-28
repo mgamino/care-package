@@ -15,7 +15,6 @@ jinja_environment = jinja2.Environment(
 class Letter(ndb.Model):
     text = ndb.TextProperty()
     theme = ndb.StringProperty()
-    location = ndb.StringProperty()#Juan did this
     deliverydate = ndb.DateProperty()
     sender_email = ndb.StringProperty()
     receiver_email = ndb.StringProperty()
@@ -25,7 +24,6 @@ class MainHandler(webapp2.RequestHandler):
     def get(self):
 
         user = users.get_current_user()
-        letter = Letter.query(Letter.sender_email == email).fetch()#Juan did this
 
         if user:
             email = user.email().lower()
@@ -103,7 +101,6 @@ class NewLetterHandler(webapp2.RequestHandler):
         text = self.request.get('text')
         theme = self.request.get('theme')
         datetemp = self.request.get('deliverydate')
-        location = self.request.get('locate')#Juan did this
 
         if datetemp == "":
             deliverydate = datetime.date.today()
@@ -119,7 +116,7 @@ class NewLetterHandler(webapp2.RequestHandler):
 
         receiver = "testing"
 
-        letter = Letter(text = text, theme = theme, sender_email = sender_email, receiver_email = receiver_email, deliverydate = deliverydate, location = location)#Juan added location
+        letter = Letter(text = text, theme = theme, sender_email = sender_email, receiver_email = receiver_email, deliverydate = deliverydate)
         letter.put()
         self.redirect("/")
 
