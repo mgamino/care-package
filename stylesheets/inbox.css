@@ -25,7 +25,7 @@ div.messagecontent {
 
 html {
   text-align: center;
-  background-image: url("/images/background3.png");
+  background-image: url("/images/background.png");
   /* Background pattern from subtlepatterns.com */
 }
 
@@ -81,4 +81,19 @@ h3 {
   color: black;
   font-family: 'Lato', sans-serif;
   font-size: 20px;
+}
+
+#delete {
+  background-color: #57BC90;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 12px;
+  width: auto;
+  height: auto;
+  vertical-align: middle;
+  margin: auto;
+  font-family: 'Lato', sans-serif;
 }
