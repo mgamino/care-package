@@ -140,6 +140,18 @@ class LetterHandler(webapp2.RequestHandler):
 
         self.response.write(template.render(template_vals))
 
+class DeleteHandler(webapp2.RequestHandler):
+    def post(self):
+        urlsafe_key = self.request.get('key')
+        logging.warn('Key: ', urlsafe_key)
+        key = ndb.Key(urlsafe = urlsafe_key)
+        letter = key.get()
+
+        if letter is not None:
+            letter.key.delete()
+
+        self.redirect("/inbox.html")
+
 class AboutHandler(webapp2.RequestHandler):
     def get(self):
 
@@ -158,5 +170,6 @@ app = webapp2.WSGIApplication([
     ('/outbox.html', OutboxHandler),
     ('/newletter.html', NewLetterHandler),
     ('/letter', LetterHandler),
-    ('/about.html', AboutHandler)
+    ('/about.html', AboutHandler),
+    ('/delete', DeleteHandler)
 ], debug=True)

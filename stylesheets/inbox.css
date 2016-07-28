@@ -8,6 +8,16 @@ div.from{
   background-color: #57BC90;
 }
 
+div.recdate {
+  margin: auto;
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+  color: white;
+  width: 430px;
+  height: 30px;
+  background-color: #57BC90;
+}
+
 .message{
   margin-right: 20px;
   margin-left: 20px;
@@ -83,7 +93,7 @@ h3 {
   font-size: 20px;
 }
 
-#delete {
+#btn {
   background-color: #57BC90;
   border: none;
   color: white;
