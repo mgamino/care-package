@@ -59,7 +59,9 @@ class InboxHandler(webapp2.RequestHandler):
         present = datetime.date.today()
 
 
-        letters = Letter.query(Letter.receiver_email == email, Letter.deliverydate <= present).order(Letter.deliverydate).order(Letter.writtendate).fetch()
+        # letters = Letter.query(Letter.receiver_email == email, Letter.deliverydate <= present).order(Letter.deliverydate).order(Letter.writtendate).fetch()
+
+        letters = Letter.query().filter('Letter.receiver_email ==', "email").filter('Letter.deliverydate <=', 'present').order(Letter.deliverydate).order(Letter.writtendate).fetch()#juan did this
 
 
         template_vals = {'letters':letters}
