@@ -34,10 +34,12 @@ class MainHandler(webapp2.RequestHandler):
             logout_url=users.CreateLogoutURL('/')
 
             letter = Letter.query(Letter.sender_email == email).fetch()#juan did this
-
+            location =[]
+            for l in letter:
+                location.append(l.location)
 
             template = jinja_environment.get_template("home.html")
-            template_vals = {'email':email, 'logout_url':logout_url}
+            template_vals = {'email':email, 'logout_url':logout_url , 'local':location}
 
 
             self.response.write(template.render(template_vals))
@@ -59,7 +61,7 @@ class InboxHandler(webapp2.RequestHandler):
         present = datetime.date.today()
 
 
-        letters = Letter.query(Letter.receiver_email == email, Letter.deliverydate <= present).order(Letter.deliverydate).order(Letter.writtendate).fetch()
+        letters = Letter.query(Letter.deliverydate <= present,Letter.receiver_email == email).order(Letter.deliverydate).order(Letter.writtendate).fetch()#juan swithced filters.That was alll!!!!
 
         template_vals = {'letters':letters}
 

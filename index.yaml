@@ -12,6 +12,11 @@ indexes:
 
 - kind: Letter
   properties:
+  - name: deliverydate
+  - name: writtendate
+
+- kind: Letter
+  properties:
   - name: receiver_email
   - name: deliverydate
 
@@ -19,6 +24,11 @@ indexes:
   properties:
   - name: receiver_email
   - name: deliverydate
+  - name: writtendate
+
+- kind: Letter
+  properties:
+  - name: receiver_email
   - name: writtendate
 
 - kind: Letter
