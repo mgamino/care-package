@@ -103,5 +103,26 @@ function setup(){
       });
     }
   );
+
+  $(".wrap5").hover(
+    function(){
+      $(this).find(".cube5").stop().css({
+      	"animation": "spin 1s infinite linear"
+      });
+      $(this).find(".top5").stop().css({
+      	"transform": "rotateX(-200deg) translateZ(-52px)"
+      });
+    }
+  );
+  $(".wrap5").mouseleave(
+    function(){
+      $(this).find(".cube5").stop().css({
+      	"animation": "spin 6s infinite linear"
+      });
+      $(this).find(".top5").stop().css({
+      	"transform": "rotateX(-90deg) translateY(-52px) translateZ(0px) "
+      });
+    }
+  );
 }
 $(document).ready(setup);
