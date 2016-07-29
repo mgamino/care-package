@@ -9,6 +9,7 @@ html {
   border-color: #841983;
   border-width: thick;
   border-style: solid;
+  max-height: 500px;
 }
 
 h1 {
