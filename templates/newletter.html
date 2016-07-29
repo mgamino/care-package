@@ -18,7 +18,7 @@
   <body>
     <section><h1>NEW LETTER</h1></section>
 
-    <form method="post" action="">
+    <form method="post" action="" enctype="multipart/form-data">
 
       <h3>TO: <input type="text" name="receiver" placeholder="friend@gmail.com"/></h3>
       <h3>LOCATION:<input id ="pac-input" class ="controls" type="text" name="locate" placeholder="Zipcode or City"/></h3>
@@ -40,7 +40,7 @@
       <textarea type="text" name="text"/ cols="63px" rows="10" placeholder="What's up?" style="resize: none;"></textarea>
 
       <br>
-      <h3>IMAGE UPLOAD</h3><input type="file" name="image" />
+      <h3>IMAGE UPLOAD</h3><input type="file" accept=".png" name="image" />
       <br>
 
       <p><input id="send" type="submit" value="SEND" style="width:100px; height:50px" ></p>

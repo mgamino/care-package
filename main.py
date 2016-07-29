@@ -1,3 +1,4 @@
+import base64
 import webapp2
 import jinja2
 import os
@@ -146,9 +147,11 @@ class NewLetterHandler(webapp2.RequestHandler):
                 theme = "cssi"
                 logging.info("operation cssi complete")
 
+            if image == "":
+                letter = Letter(text = text, theme = theme, sender_email = sender_email, receiver_email = receiver_email, deliverydate = deliverydate, location = location)#Juan did this location
+            else:
+                letter = Letter(text = text, theme = theme, sender_email = sender_email, receiver_email = receiver_email, deliverydate = deliverydate, location = location, image = image)#Juan did this location
 
-
-            letter = Letter(text = text, theme = theme, sender_email = sender_email, receiver_email = receiver_email, deliverydate = deliverydate, location = location, image = image)#Juan did this location
             letter.put()
             self.redirect("/sent")
 
@@ -175,9 +178,12 @@ class LetterHandler(webapp2.RequestHandler):
         key = ndb.Key(urlsafe = urlsafe_key)
         letter = key.get()
 
-
+        if (letter.image is None):
+            image_content = ""
+        else:
+            image_content = base64.b64encode(letter.image)
         template = jinja_environment.get_template("letter.html")
-        template_vals = {'letter':letter}
+        template_vals = {'letter':letter, 'image_content': image_content}
 
         self.response.write(template.render(template_vals))
 

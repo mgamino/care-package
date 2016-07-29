@@ -42,9 +42,12 @@
           <div class ="text">
             <p>{{letter.text}}</p>
         </div>
-          <div class="image">
-            {{letter.image}}
+          {% if image_content != "" %}
+          <div>
+
+            <img class = "imagetho" src="data:image/png;base64, {{image_content}}" />
           </div>
+          {% endif %}
         <h3>{{letter.sender_email}}</h3>
       </div>
       </div>
