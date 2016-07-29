@@ -44,9 +44,11 @@ function codeAddress() {
     geocoder.geocode( { 'address': address},
       function(results, status) {
         if (status == 'OK') {
+          var image = {url:"images/gift-24.png"}
           var marker = new google.maps.Marker({
               map: map,
-              position: results[0].geometry.location
+              position: results[0].geometry.location,
+              icon: image
           });
         } else {
           alert('Geocode was not successful for the following reason: ' + status);

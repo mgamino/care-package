@@ -107,3 +107,6 @@ h3 {
   margin: auto;
   font-family: 'Oswald', sans-serif;
 }
+.controls{
+  width:200px;
+}
