@@ -9,33 +9,35 @@ html {
   margin-left: 20%;
   margin-right: 20%;
   margin-top: 0%;
-  height: auto;
+  max-height: 100px;
+  max-width: 600px;
 }
 
 .letter {
   margin-top: 0%;
   margin-left: 20%;
   margin-right: 20%;
-  border-color: #4CDEF5;
+  border-color: #db3236;
   border-width: thick;
   border-style: solid;
+  background-color: white;
 }
 
 p {
   font-family: 'Futura';
   font-size: 30px;
-  color: #192231;
+  color: #4885ed;
 }
 
 h3 {
   font-family: 'Futura', sans-serif;
   font-size: 30px;
   color: white;
-  background-color: #FF5992;
+  background-color: #3cba54;
 }
 
 .rbutton {/*Controls button in newletter.html*/
-  background-color: #A4D555;
+  background-color: #f4c20d;
   border: none;
   color: white;
   padding: 15px 32px;
