@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>New Letter</title>
+    <title>Send Mail</title>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js'></script>
     <script src="js/newletter.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2F3hvciau43w3OEzoRaXTbg9kWiHORlw&libraries=places&callback=initAutocomplete" async defer></script>
     <link href='https://fonts.googleapis.com/css?family=Lato|Oswald:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="stylesheets/inbox.css">
 
@@ -22,6 +21,7 @@
 
       <h3>TO: <input type="text" name="receiver" placeholder="friend@gmail.com"/></h3>
       <h3>LOCATION:<input id ="pac-input" class ="controls" type="text" name="locate" placeholder="Zipcode or City"/></h3>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2F3hvciau43w3OEzoRaXTbg9kWiHORlw&libraries=places&callback=initAutocomplete" async defer></script>
       <h3>DELIVERY DATE:<input type = "date" name="deliverydate"/></h3>
       <h3>THEME:</h3> <select name="themeChoices" onchange='updateTheme()' id="tempTheme">
         <option value="cute">Cute</option>
