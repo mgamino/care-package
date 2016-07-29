@@ -13,6 +13,8 @@
       <link rel="stylesheet" href="stylesheets/tropical.css">
     {% elif letter.theme == "meme" %}
       <link rel="stylesheet" href="stylesheets/meme.css">
+    {% elif letter.theme == "cssi" %}
+      <link rel="stylesheet" href="stylesheets/cssi.css">
     {% else %}
       <link rel="stylesheet" href="stylesheets/elegant.css">
     {% endif %}
@@ -30,6 +32,8 @@
           <h1>MESSAGE</h1>
         {% elif letter.theme == "meme" %}
           <h1>welcome to hell</h1>
+        {% elif letter.theme == "cssi" %}
+          <img id="cssilogo" src="/images/logo.png">
         {% elif letter.theme == "tropical" %}
           <h1>HELLO</h1>
         {% else %}

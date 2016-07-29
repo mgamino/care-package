@@ -140,6 +140,10 @@ class NewLetterHandler(webapp2.RequestHandler):
                 theme = "meme"
                 logging.info("operation meme complete")
 
+            if "#cssi2016" in text:
+                theme = "cssi"
+                logging.info("operation cssi complete")
+
             letter = Letter(text = text, theme = theme, sender_email = sender_email, receiver_email = receiver_email, deliverydate = deliverydate, location = location)#Juan did this location
             letter.put()
             self.redirect("/sent")
