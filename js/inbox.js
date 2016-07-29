@@ -124,5 +124,25 @@ function setup(){
       });
     }
   );
+  $(".wrap6").hover(
+    function(){
+      $(this).find(".cube6").stop().css({
+        "animation": "spin 1s infinite linear"
+      });
+      $(this).find(".top6").stop().css({
+        "transform": "rotateX(-200deg) translateZ(-52px)"
+      });
+    }
+  );
+  $(".wrap6").mouseleave(
+    function(){
+      $(this).find(".cube6").stop().css({
+        "animation": "spin 6s infinite linear"
+      });
+      $(this).find(".top6").stop().css({
+        "transform": "rotateX(-90deg) translateY(-52px) translateZ(0px) "
+      });
+    }
+  );
 }
 $(document).ready(setup);
