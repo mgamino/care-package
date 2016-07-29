@@ -21,6 +21,7 @@ class Letter(ndb.Model):
     sender_email = ndb.StringProperty()
     receiver_email = ndb.StringProperty()
     writtendate = ndb.DateTimeProperty(auto_now_add = True)
+    image = ndb.BlobProperty()
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
@@ -106,6 +107,7 @@ class NewLetterHandler(webapp2.RequestHandler):
         theme = self.request.get('theme')
         datetemp = self.request.get('deliverydate')
         location = self.request.get('locate')#Juan Did this
+        image = self.request.get('image')
 
         if datetemp == "":
             deliverydate = datetime.date.today()
@@ -144,7 +146,9 @@ class NewLetterHandler(webapp2.RequestHandler):
                 theme = "cssi"
                 logging.info("operation cssi complete")
 
-            letter = Letter(text = text, theme = theme, sender_email = sender_email, receiver_email = receiver_email, deliverydate = deliverydate, location = location)#Juan did this location
+
+
+            letter = Letter(text = text, theme = theme, sender_email = sender_email, receiver_email = receiver_email, deliverydate = deliverydate, location = location, image = image)#Juan did this location
             letter.put()
             self.redirect("/sent")
 
