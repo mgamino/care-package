@@ -23,12 +23,14 @@ th {
   font-size: 30px;
   background-color: #841983;
   color: white;
+
 }
 
 td {
   font-family: 'Lato', sans-serif;
   font-size: 20px;
   color: black;
+  width:33.3%;
 }
 
 #to{

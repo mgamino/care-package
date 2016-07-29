@@ -21,10 +21,19 @@ function setup(){
     }
   );
 }
+
 $(document).ready(setup);
 
 var geocoder;
 var map;
+
+function toggleBounce() {
+  if (marker.getAnimation() !== null) {
+    marker.setAnimation(null);
+  } else {
+    marker.setAnimation(google.maps.Animation.BOUNCE);
+  }
+}
 
 function initialize() {
   geocoder = new google.maps.Geocoder();
@@ -48,7 +57,8 @@ function codeAddress() {
           var marker = new google.maps.Marker({
               map: map,
               position: results[0].geometry.location,
-              icon: image
+              icon: image,
+              animation: google.maps.Animation.DROP
           });
         } else {
           alert('Geocode was not successful for the following reason: ' + status);
