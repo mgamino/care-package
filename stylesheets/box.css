@@ -65,23 +65,3 @@
   top: 40px;
   width: 104px;
 }
-
-/*<div class = "message">
-  <center>{{letter.receiver_email}}</center>
-    <div class = "textbox">
-      <div class="wrap">
-        <center>
-          <div class="cube">
-            <div class="front"><div id="cross"></div></div>
-            <div class="back"><div id="cross"></div></div>
-            <div class="top"><div id="cross"></div></div>
-            <div class="bottom"><div id="cross"></div></div>
-            <div class="left"><div id="cross"></div></div>
-            <div class="right"><div id="cross"></div></div>
-          </div>
-        </center>
-      </div>
-    </div>
-  </div>
-</div>
-</div>*/
