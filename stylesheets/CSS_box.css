@@ -1,0 +1,49 @@
+.wrap6 {
+	perspective: 800px;
+	perspective-origin: 50% -150px;
+  margin-top: 30px;
+}
+.cube6 {
+	position: relative;
+	width: 102px;
+	transform-style: preserve-3d;
+
+}
+.cube6 div {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+  background-image: url("/images/light.jpg");
+  background-size: cover;
+  border: #e16f83 solid 2px;
+}
+.back6 {
+	transform: translateZ(-52px) rotateY(180deg);
+}
+.right6 {
+	transform: rotateY(-270deg) translateX(52px);
+	transform-origin: top right;
+}
+.left6 {
+	transform: rotateY(270deg) translateX(-52px);
+	transform-origin: center left;
+}
+.top6 {
+	transform: rotateX(-90deg) translateY(-52px);
+	transform-origin: top center;
+}
+.bottom6 {
+	transform: rotateX(90deg) translateY(52px);
+	transform-origin: bottom center;
+}
+.front6 {
+	transform: translateZ(52px);
+}
+
+@keyframes spin {
+	from { transform: rotateY(0); }
+	to { transform: rotateY(360deg); }
+}
+.cube6{
+	animation: spin 6s infinite linear;
+}
