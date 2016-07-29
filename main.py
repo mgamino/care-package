@@ -24,10 +24,6 @@ class Letter(ndb.Model):
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        #get location string from Letter
-        #need to render the html file
-        #put swiggly lines in html to place location value#in meta tag
-        #
         user = users.get_current_user()
 
         if user:
