@@ -53,3 +53,9 @@ h3 {
   height: 25px;
   margin: auto;
 }
+
+.image {
+  margin-left: 50%;
+  margin-right: 50%;
+  max-height: 300px;
+}
