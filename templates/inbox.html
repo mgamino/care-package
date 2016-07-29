@@ -5,7 +5,11 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js'></script>
     <script src="js/inbox.js"></script>
     <link rel="stylesheet" href="/stylesheets/inbox.css">
-    <link rel="stylesheet" href="/stylesheets/box.css">
+    <link rel="stylesheet" href="/stylesheets/bold_box.css">
+    <link rel="stylesheet" href="/stylesheets/classic_box.css">
+    <link rel="stylesheet" href="/stylesheets/elegant_box.css">
+    <link rel="stylesheet" href="/stylesheets/tropical_box.css">
+    <link rel="stylesheet" href="/stylesheets/cute_box.css">
     <link href='https://fonts.googleapis.com/css?family=Lato|Oswald:400,700' rel='stylesheet' type='text/css'>
   </head>
   <body>
@@ -19,18 +23,85 @@
             <input type="submit" value="DELETE" id="btn">
           </form>
               <div class = "textbox">
-                <div class="wrap">
-                  <center>
-                  	<div class="cube">
-                  		<div class="front"><div id="cross"></div></div>
-                  		<div class="back"><div id="cross"></div></div>
-                  		<div class="top"><div id="cross"></div></div>
-                  		<div class="bottom"><div id="cross"></div></div>
-                  		<div class="left"><div id="cross"></div></div>
-                  		<div class="right"><div id="cross"></div></div>
-                  	</div>
-                  </center>
-                </div>
+                {% if letter.theme == "cute" %}
+                  <div class="wrap1">
+                    <center>
+                      <div class="cube1">
+                        <div class="front1"><div id="cross1"></div></div>
+                        <div class="back1"><div id="cross1"></div></div>
+                        <div class="top1"><div id="cross1"></div></div>
+                        <div class="bottom1"><div id="cross1"></div></div>
+                        <div class="left1"><div id="cross1"></div></div>
+                        <div class="right1"><div id="cross1"></div></div>
+                      </div>
+                    </center>
+                  </div>
+                {% elif letter.theme == "classic" %}
+                  <div class="wrap">
+                    <center>
+                    	<div class="cube">
+                    		<div class="front"><div id="cross"></div></div>
+                    		<div class="back"><div id="cross"></div></div>
+                    		<div class="top"><div id="cross"></div></div>
+                    		<div class="bottom"><div id="cross"></div></div>
+                    		<div class="left"><div id="cross"></div></div>
+                    		<div class="right"><div id="cross"></div></div>
+                    	</div>
+                    </center>
+                  </div>
+                {% elif letter.theme == "bold" %}
+                  <div class="wrap2">
+                    <center>
+                      <div class="cube2">
+                        <div class="front2"><div id="cross2"></div></div>
+                        <div class="back2"><div id="cross2"></div></div>
+                        <div class="top2"><div id="cross2"></div></div>
+                        <div class="bottom2"><div id="cross2"></div></div>
+                        <div class="left2"><div id="cross2"></div></div>
+                        <div class="right2"><div id="cross2"></div></div>
+                      </div>
+                    </center>
+                  </div>
+                {% elif letter.theme == "tropical" %}
+                  <div class="wrap3">
+                    <center>
+                      <div class="cube3">
+                        <div class="front3"><div id="cross3"></div></div>
+                        <div class="back3"><div id="cross3"></div></div>
+                        <div class="top3"><div id="cross3"></div></div>
+                        <div class="bottom3"><div id="cross3"></div></div>
+                        <div class="left3"><div id="cross3"></div></div>
+                        <div class="right3"><div id="cross3"></div></div>
+                      </div>
+                    </center>
+                  </div>
+                {% elif letter.theme == "elegant" %}
+                    <div class="wrap4">
+                      <center>
+                        <div class="cube4">
+                          <div class="front4"><div id="cross4"></div></div>
+                          <div class="back4"><div id="cross4"></div></div>
+                          <div class="top4"><div id="cross4"></div></div>
+                          <div class="bottom4"><div id="cross4"></div></div>
+                          <div class="left4"><div id="cross4"></div></div>
+                          <div class="right4"><div id="cross4"></div></div>
+                        </div>
+                      </center>
+                    </div>
+                {%else%}
+                  <div class="wrap">
+                    <center>
+                      <div class="cube">
+                        <div class="front"><div id="cross"></div></div>
+                        <div class="back"><div id="cross"></div></div>
+                        <div class="top"><div id="cross"></div></div>
+                        <div class="bottom"><div id="cross"></div></div>
+                        <div class="left"><div id="cross"></div></div>
+                        <div class="right"><div id="cross"></div></div>
+                      </div>
+                    </center>
+                  </div>
+                {% endif %}
               </div>
               </a>
             </div>

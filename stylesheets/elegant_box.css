@@ -1,0 +1,67 @@
+.wrap4 {
+	perspective: 800px;
+	perspective-origin: 50% -150px;
+  margin-top: 30px;
+}
+.cube4 {
+	position: relative;
+	width: 102px;
+	transform-style: preserve-3d;
+
+}
+.cube4 div {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+  background-color:#0B3C5D;
+  border: #093653 solid 2px;
+}
+.back4 {
+	transform: translateZ(-52px) rotateY(180deg);
+}
+.right4 {
+	transform: rotateY(-270deg) translateX(52px);
+	transform-origin: top right;
+}
+.left4 {
+	transform: rotateY(270deg) translateX(-52px);
+	transform-origin: center left;
+}
+.top4 {
+	transform: rotateX(-90deg) translateY(-52px);
+	transform-origin: top center;
+}
+.bottom4 {
+	transform: rotateX(90deg) translateY(52px);
+	transform-origin: bottom center;
+}
+.front4 {
+	transform: translateZ(52px);
+}
+
+@keyframes spin {
+	from { transform: rotateY(0); }
+	to { transform: rotateY(360deg); }
+}
+.cube4{
+	animation: spin 6s infinite linear;
+}
+
+
+#cross4 {
+  background: #D9B310;
+  height: 104px;
+  position:relative;
+  width: 20px;
+  top:-1.9px;
+  border: none;
+}
+#cross4:after {
+  background:#D9B310;
+  content: "";
+  height: 20px;
+  left: -42px;
+  position: absolute;
+  top: 40px;
+  width: 104px;
+}
