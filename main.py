@@ -198,6 +198,14 @@ class AboutHandler(webapp2.RequestHandler):
         self.response.write(template.render())
     #   self.response.write(template.render(template_vals))
 
+class BoomHandler(webapp2.RequestHandler):
+    def get(self):
+
+        template = jinja_environment.get_template("side.html")
+
+
+        self.response.write(template.render())
+
 
 
 app = webapp2.WSGIApplication([
@@ -210,5 +218,6 @@ app = webapp2.WSGIApplication([
     ('/about.html', AboutHandler),
     ('/sent', SentHandler),
     ('/oops', OopsHandler),
-    ('/delete', DeleteHandler)
+    ('/delete', DeleteHandler),
+    ('/BOOM',BoomHandler)
 ], debug=True)
