@@ -13,8 +13,7 @@
 	position: absolute;
 	width: 100px;
 	height: 100px;
-  background-image: url("/images/light.jpg");
-  background-size: cover;
+  background-color: white;
   border: #e16f83 solid 2px;
 }
 .back6 {
@@ -46,4 +45,8 @@
 }
 .cube6{
 	animation: spin 6s infinite linear;
+}
+
+img{
+  margin-top: 5px;
 }
