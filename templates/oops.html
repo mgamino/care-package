@@ -2,13 +2,13 @@
 <html>
   <head>
     <title>Oops!</title>
-    <link rel="stylesheet" href="stylesheets/home.css">
+    <link rel="stylesheet" href="stylesheets/oops.css">
     <link href='https://fonts.googleapis.com/css?family=Lato|Oswald:400,700' rel='stylesheet' type='text/css'>
     <link rel="icon" type="image/png" href="myfavicon.ico" />
   </head>
   <body>
     <h1>C@RE PACKAGE</h1>
-    <h3> Something went wrong with your message. Double check it here and make sure you entered everything correctly. You will have to reenter this info in the form when you are redirected.</h3>
+    <h2> OOPS! <br> Something went wrong with your message. Double check it here and make sure you entered everything correctly. You will have to reenter this info in the form.</h2>
 
     <!DOCTYPE html>
     <html>
@@ -23,18 +23,21 @@
           <div class = "message">
 
               <div class ="text">
-              <h3> Letter text:</h3>
+              <h3> Letter Text:</h3>
               <p>{{text}}</p>
             </div>
-            <h3>Sent to: {{email}}</h3>
-            <h3>Location: {{location}}</h3>
-            <h3>To Be Delivered on: {{datetemp}}</h3>
+            <h3>Sent To:</h3>
+            <h4>{{email}}</h4>
+            <h3>Location:</h3>
+            <h4>{{location}}</h4>
+            <h3>To Be Delivered On:</h3>
+            <h4>{{datetemp}}</h4>
           </div>
           </div>
 
         <br>
 
 
-    <a href="/newletter.html" class="sent"> try again </a>
+    <a href="/newletter.html" class="sent"> TRY AGAIN </a>
   </body>
 </html>
